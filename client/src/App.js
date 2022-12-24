@@ -1,22 +1,18 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Main from './pages/Main';
+import Collection from './pages/Collection';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      APP입니다.
+      <Routes>
+        <Route path='/' element={<Main></Main>}></Route>
+        <Route path='/collection' element={<Collection></Collection>}></Route>
+        <Route></Route>
+      </Routes>
     </div>
   );
 }
