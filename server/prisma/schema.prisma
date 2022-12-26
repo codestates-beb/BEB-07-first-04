@@ -22,6 +22,7 @@ model Collection {
 
 model Items {
   id                Int     @id @default(autoincrement())
+  ownerAddress      String
   collectionAddress String
   tokenId           Int
   price             Int     @default(0)
