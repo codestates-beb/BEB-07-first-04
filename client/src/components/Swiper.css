@@ -1,0 +1,22 @@
+.main-slider-swiper{
+    box-sizing: border-box;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+
+    padding: 20px;
+    border-radius: 25px;
+    margin-right: 16px;
+}
+
+.main-slider-swiper-description{
+    position:absolute;
+    bottom: 10px;
+    
+}
+.main-slider-swiper-description > h5{
+    margin: 0;
+    padding: 0;
+}
+
