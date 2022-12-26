@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Main from './pages/Main';
 import Collection from './pages/Collection';
+import Mypage from './pages/Mypage';
 
 
 function App() {
@@ -11,7 +12,10 @@ function App() {
       <Routes>
         <Route path='/' element={<Main></Main>}></Route>
         <Route path='/collection' element={<Collection></Collection>}></Route>
-        <Route></Route>
+        <Route path='/explore' element={<Collection></Collection>}></Route>
+        <Route path='/mypage' element={<Mypage></Mypage>}></Route>
+        {/* <Route path='/NFT_Making' element={<NFT_Making />} />
+        <Route path='/NFT_Transaction' element={<NFT_Transaction />} /> */}
       </Routes>
     </div>
   );
