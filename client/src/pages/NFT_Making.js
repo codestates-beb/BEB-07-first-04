@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
 
@@ -25,21 +26,23 @@ const NFT_Making = () => {
     return (
         <div>
             <h1>NFT 만들기 </h1>
-            <div className="preview">
-                {imgFile && <img src={imgFile} alt="preview-img" />}
-            </div>
-            <input
-                type='file'
-                onChange={handleImgChange}
-            />
+            <Box component="span" >
+                <div className="preview">
+                    {imgFile && <img src={imgFile} alt="preview-img" />}
+                </div>
                 
+                <input
+                    type='file'
+                    onChange={handleImgChange}
+                />
+            </Box>
             <p> 제목</p>
             <input onchage={(e)=>setName(e)} />
             <p> 설명</p>
             <input onchage={(e)=>setName(e)} />
             
             <p> </p>
-            <Button onClick={handleClickCreate}>Create</Button>
+            <Button variant="contained" onClick={handleClickCreate}>Create</Button>
         </div>
     )
 }
