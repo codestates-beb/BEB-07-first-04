@@ -1,11 +1,13 @@
 import React from 'react';
-// import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import './connectWallet.css';
-function ConnectWallet() {
-  const [account, setAccount] = useState('');
-  const [isConnected, setConnected] = useState(false);
+function ConnectWallet(props) {
+  const navigate = useNavigate();
+  const account = props.walletAddress;
+  const setAccount = props.setWalletAddress;
+  const isConnected = props.isConnected;
+  const setConnected = props.setConnected;
 
   const connectWallet = async () => {
     const accounts = await window.ethereum.request({
@@ -18,7 +20,7 @@ function ConnectWallet() {
   };
 
   return (
-    <div className="connectWallt">
+    <div className="connectWallet">
       <button
         className="metaConnect"
         onClick={() => {
@@ -28,6 +30,9 @@ function ConnectWallet() {
         {isConnected ? 'Disconnect' : 'Connect MetaMask'}
       </button>
       <div className="userInfo">주소:{account}</div>
+      <button className="goBack" onClick={() => navigate(-1)}>
+        방금 페이지로 돌아가기
+      </button>
     </div>
   );
 }

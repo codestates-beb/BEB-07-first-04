@@ -3,7 +3,6 @@ import BackgroundImg from '../components/MyPage/backgroundimg';
 import ProfileImg from '../components/MyPage/profileImg';
 import Item from '../components/MyPage/item';
 import UserInfo from '../components/MyPage/userInfo';
-import ConnectWallet from '../components/connectWallet';
 
 //css
 import './MyPage.css';
@@ -34,7 +33,6 @@ const Mypage = () => {
         <ProfileImg profImg={profileImg} />
       </div>
       <UserInfo />
-      <ConnectWallet />
       <div id="items">
         {items.map((e) => (
           <Item img={e.img} name={e.name} collection={e.collection} />
