@@ -1,0 +1,10 @@
+.navtap-nav{
+    display: flex;
+    border-bottom: 1px solid #eee;
+}
+
+
+.navtap-nav-tap{
+    margin: 10px 40px 10px 0;
+    color: gray;
+}

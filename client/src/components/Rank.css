@@ -1,0 +1,26 @@
+.main-ranker-rank{
+    width: 492px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.main-ranker-rank-left-container{
+    display: flex;
+    align-items: center;
+}
+.main-ranker-rank-left-container > div{
+    margin-right: 20px;
+}
+
+.main-ranker-rank-number{
+    width: 1rem;
+}
+
+.main-ranker-rank-img > img {
+    width: 66px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
