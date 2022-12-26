@@ -4,15 +4,33 @@
     width: 200px;
     height: 200px;
     background-color: aqua;
+    cursor: pointer;
 
-    padding: 20px;
+
+    
     border-radius: 25px;
     margin-right: 16px;
+    overflow: hidden;
+}
+
+.main-slider-swiper-bgimg{
+    object-fit: cover;
+    max-width: 100%;
+    min-width: 100%;
+    transform: scale(1);
+    transition: all 0.2s ease-in-out; 
+}
+
+
+.main-slider-swiper-bgimg:hover{
+    transform: scale(1.1);
 }
 
 .main-slider-swiper-description{
     position:absolute;
     bottom: 10px;
+    margin-left: 20px;
+    color: #eee;
     
 }
 .main-slider-swiper-description > h5{
