@@ -1,0 +1,6 @@
+#items{
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(20%, auto));
+  column-gap: 20px;
+}

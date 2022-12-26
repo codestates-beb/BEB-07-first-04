@@ -1,0 +1,21 @@
+#id_div{
+  width: 250px;
+  height: 350px;
+  background-color: skyblue;
+  margin: 10px;
+}
+
+#item_img{
+  margin:15px;
+  width: 220px;
+  height: 220px;
+}
+
+#item_name{
+  margin-top:0px;
+  margin-left:15px;
+}
+#item_collection{
+  margin-top:0px;
+  margin-left:15px;
+}

@@ -1,0 +1,9 @@
+#profileimg{
+  width: 350px;
+  height: 350px;
+
+  border-radius: 30px;
+  border-style: solid;
+  border-color: lightgray;
+  border-width: 5px;
+}

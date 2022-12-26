@@ -4,16 +4,15 @@ import Main from './pages/Main';
 import Collection from './pages/Collection';
 import Mypage from './pages/Mypage';
 
-
 function App() {
   return (
     <div className="App">
-      APP입니다.
+      여기에 헤더가 들어가나요
       <Routes>
-        <Route path='/' element={<Main></Main>}></Route>
-        <Route path='/collection' element={<Collection></Collection>}></Route>
-        <Route path='/explore' element={<Collection></Collection>}></Route>
-        <Route path='/mypage' element={<Mypage></Mypage>}></Route>
+        <Route path="/" element={<Main></Main>}></Route>
+        <Route path="/collection" element={<Collection></Collection>}></Route>
+        <Route path="/explore" element={<Collection></Collection>}></Route>
+        <Route path="/mypage" element={<Mypage></Mypage>}></Route>
         {/* <Route path='/NFT_Making' element={<NFT_Making />} />
         <Route path='/NFT_Transaction' element={<NFT_Transaction />} /> */}
       </Routes>
