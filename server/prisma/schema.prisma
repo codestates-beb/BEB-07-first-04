@@ -11,13 +11,17 @@ datasource db {
 }
 
 model User {
-  walletAddress String @id
-  username      String
+  walletAddress    String @id
+  username         String
+  profilePicUrl    String
+  backgroundPicUrl String
 }
 
 model Collection {
-  contractAddress String @id
-  collectionName  String
+  contractAddress  String @id
+  collectionName   String
+  profilePicUrl    String
+  backgroundPicUrl String
 }
 
 model Items {
