@@ -1,4 +1,5 @@
 #backgroundimg{
-  width :100em;
+  object-fit: cover;
+  width :100vw;
   height : 350px;
 }

@@ -5,3 +5,13 @@
   grid-template-columns: repeat(auto-fill, minmax(20%, auto));
   gap: 20px;
 }
+
+#userprofile{
+  position:absolute;
+  top: 280px;
+  left: 50px;
+}
+
+#mypage{
+  display: grid;
+}

@@ -3,6 +3,7 @@ import BackgroundImg from '../components/MyPage/backgroundimg';
 import ProfileImg from '../components/MyPage/profileImg';
 import Item from '../components/MyPage/item';
 import UserInfo from '../components/MyPage/userInfo';
+import MenuBar from '../components/MyPage/menubar';
 
 //css
 import './MyPage.css';
@@ -25,14 +26,17 @@ const Mypage = () => {
     },
   ];
   return (
-    <div>
+    <div id="mypage">
       <div id="backgroundimg">
         <BackgroundImg bgimg={backgroundImgUrl} />
       </div>
-      <div>
+      <div id="userprofile">
         <ProfileImg profImg={profileImg} />
+        <UserInfo />
       </div>
-      <UserInfo />
+      <div>
+        <MenuBar />
+      </div>
       <div id="items">
         {items.map((e) => (
           <Item img={e.img} name={e.name} collection={e.collection} />
