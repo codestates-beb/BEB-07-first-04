@@ -14,7 +14,7 @@
 
 #mypage{
   display: grid;
-  grid-template-rows: 300px 180px 50px 300px
+  grid-template-rows: 300px 180px 50px minmax(300px,auto)
 }
 
 #menubar{
