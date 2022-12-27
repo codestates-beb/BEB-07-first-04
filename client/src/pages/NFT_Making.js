@@ -12,8 +12,6 @@ import {create} from 'ipfs-http-client';
 // const ipfsClient = require("ipfs-http-client");
 const contractAddress = '0x13911Cb6899A8fBd771806E17f45B742d11B010f';
 
-const ipfsAddress = 'http://127.0.0.1:5001';
-
 const projectId = '2JULpqFvMACL4Y7410ulfOmqmVF';   // <---------- your Infura Project ID
 
 const projectSecret = '6a9b6c22ef56d8525a14ccdce315c40e';  // <---------- your Infura Secret
@@ -63,7 +61,7 @@ const NFT_Making = () => {
             }
           )
           console.log(added);
-          const url = `https://ipfs.infura.io/ipfs/${added.path}`;
+          const url = `https://making.infura-ipfs.io/ipfs/${added.path}`;
           console.log(url)
           return uploadMetaData(url)
         }catch(e){
@@ -87,7 +85,7 @@ const NFT_Making = () => {
               progress: (prog) => console.log(`received: ${prog}`)
             }
           )
-          return `https://ipfs.infura.io/ipfs/${added.path}?filename=${added.path}`;
+          return `https://making.infura-ipfs.io/ipfs/${added.path}?filename=${added.path}`;
           
         }
         catch(e){
