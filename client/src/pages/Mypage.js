@@ -9,6 +9,8 @@ import MenuBar from '../components/MyPage/menubar';
 import './MyPage.css';
 
 const Mypage = () => {
+  const username = 'Unnamed';
+  const walletAddress = '0xCD0510aEcD00BdD36ac9272f1a905bf775753355';
   const backgroundImgUrl =
     'https://cdn.discordapp.com/attachments/1056736677932048424/1056736700921032734/image.png';
   const profileImg =
@@ -32,9 +34,9 @@ const Mypage = () => {
       </div>
       <div id="userprofile">
         <ProfileImg profImg={profileImg} />
-        <UserInfo />
+        <UserInfo username={username} walletAddress={walletAddress} />
       </div>
-      <div>
+      <div id="menubar">
         <MenuBar />
       </div>
       <div id="items">

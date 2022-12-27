@@ -2,16 +2,21 @@
   flex-wrap: wrap;
   display: flex;
   align-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(20%, auto));
   gap: 20px;
+  grid-row: 4/5;
 }
 
 #userprofile{
   position:absolute;
-  top: 280px;
+  top: 220px;
   left: 50px;
 }
 
 #mypage{
   display: grid;
+  grid-template-rows: 300px 180px 50px 300px
+}
+
+#menubar{
+  grid-row: 3/4
 }
