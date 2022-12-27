@@ -1,11 +1,8 @@
 .main-slider{
     height: max-content;
-    position: relative;
+    overflow-x: hidden;
 }
-.main-swiper-container{
-    display: flex;
-    padding: 0 16px;
-}
+
 .main-slider-heading-wrapper{
     display: flex;
     justify-content: center;
@@ -15,6 +12,20 @@
     margin: 40px ;
     width: fit-content;
 }
+
+.main-swiper-container-wrapper{
+    position: relative;
+
+}
+.main-swiper-container{
+    width: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 16px;
+
+    transition: all 0.5s ease-in-out;
+}
+
 .main-slider-arrow-button{
     cursor: pointer;
     display: flex;
@@ -22,6 +33,7 @@
     align-items: center;
     position: absolute;
     top: 50%;
+    transform: translateY(-50%);
     width: 40px;
     height: 40px;
     border: 0;
@@ -39,6 +51,8 @@
 
 
 .main-slider-arrow-button > svg{
+    width: 38px;
+    height: 38px;
     fill:#fff;
 }
 

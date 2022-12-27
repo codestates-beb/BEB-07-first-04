@@ -1,5 +1,5 @@
 import React from "react";
-import Exploreitems from "../components/Exploreitems";
+import Exploreitems from "../components/explore/Exploreitems";
 import Navtap from "../components/Navtap";
 import './Explore.css'
 

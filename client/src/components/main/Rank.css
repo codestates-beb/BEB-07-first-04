@@ -1,10 +1,16 @@
 .main-ranker-rank{
     width: 492px;
+    padding: 12px 8px;
+    border-radius: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     cursor: pointer;
+    color: black;
+}
+.main-ranker-rank:hover{
+    background-color: #eee;
 }
 
 .main-ranker-rank-left-container{
@@ -23,4 +29,12 @@
     width: 66px;
     border: 1px solid gray;
     border-radius: 10px;
+}
+
+.main-ranker-rank-title > h5{
+    margin: 0;
+}
+.main-ranker-rank-title > p{
+    margin: 3px 0 ;
+    font-size: 0.5em;
 }

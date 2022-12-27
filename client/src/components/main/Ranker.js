@@ -1,5 +1,6 @@
 import React from "react";
-import Navtap from "./Navtap";
+import { Link } from "react-router-dom";
+import Navtap from "../Navtap";
 import Rank from "./Rank";
 import './Ranker.css'
 
@@ -13,7 +14,7 @@ const Ranker = () => {
                 <div className="main-ranker-content-title"><div>COLLECTION</div><div>VOLUME</div></div>
                 {
                     [1,2,3,4,5].map((e)=>{
-                        return <Rank i={e}></Rank>;
+                        return <Link to='#'> <Rank i={e}></Rank></Link>;
                     })
                 }
             </div>
@@ -21,7 +22,7 @@ const Ranker = () => {
                 <div className="main-ranker-content-title"><div>COLLECTION</div><div>VOLUME</div></div>
                 {
                     [6,7,8,9,10].map((e)=>{
-                        return <Rank i={e}></Rank>;
+                        return <Link to='#'> <Rank i={e}></Rank></Link>;
                     })
                 }
             </div>

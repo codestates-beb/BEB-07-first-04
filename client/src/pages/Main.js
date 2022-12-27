@@ -1,6 +1,6 @@
 import React from "react";
-import Ranker from "../components/Ranker";
-import Slider from "../components/Slider";
+import Ranker from "../components/main/Ranker";
+import Slider from "../components/main/Slider";
 
 const Main = () => {
     return <div className="Main">

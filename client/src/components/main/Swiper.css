@@ -3,7 +3,7 @@
     position: relative;
     width: 200px;
     height: 200px;
-    background-color: aqua;
+    background-color: gray;
     cursor: pointer;
 
 
@@ -15,8 +15,7 @@
 
 .main-slider-swiper-bgimg{
     object-fit: cover;
-    max-width: 100%;
-    min-width: 100%;
+    width: 100%;
     transform: scale(1);
     transition: all 0.2s ease-in-out; 
 }
@@ -37,4 +36,10 @@
     margin: 0;
     padding: 0;
 }
+
+.main-slider-swiper-description > span {
+    font-size: 0.5em;
+    font-weight: 600;
+}
+
 
