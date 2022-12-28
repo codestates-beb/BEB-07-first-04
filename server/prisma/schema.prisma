@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  walletAddress    String @id
+  username         String
+  profilePicUrl    String
+  backgroundPicUrl String
+}
+
+model Collection {
+  contractAddress  String @id
+  collectionName   String
+  profilePicUrl    String
+  backgroundPicUrl String
+}
+
+model Items {
+  id                Int     @id @default(autoincrement())
+  ownerAddress      String
+  collectionAddress String
+  tokenId           Int
+  price             Int     @default(0)
+  isListed          Boolean @default(false)
+  metaData          String
+}
