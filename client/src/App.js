@@ -3,12 +3,13 @@ import './App.css';
 import Main from './pages/Main';
 import Collection from './pages/Collection';
 import Mypage from './pages/Mypage';
-
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 function App() {
   return (
     <div className="App">
-      APP입니다.
+      <Header />
       <Routes>
         <Route path='/' element={<Main></Main>}></Route>
         <Route path='/collection' element={<Collection></Collection>}></Route>
@@ -17,6 +18,7 @@ function App() {
         {/* <Route path='/NFT_Making' element={<NFT_Making />} />
         <Route path='/NFT_Transaction' element={<NFT_Transaction />} /> */}
       </Routes>
+      <Footer />
     </div>
   );
 }
