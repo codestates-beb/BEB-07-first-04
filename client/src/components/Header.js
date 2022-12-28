@@ -106,7 +106,7 @@ function Header () {
           <AiOutlineWallet onClick={()=>connectWallet()}/>
         </div>
 
-{/* 마이페이지 -> 지갑 연결 먼저 진행할 수 있도록 코드 구현 필요 */}
+{/* 마이페이지 -> 지갑 연결 먼저 진행할 수 있도록 코드 구현 필요함 */}
 
 
     </div>
