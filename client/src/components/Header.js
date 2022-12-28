@@ -91,9 +91,9 @@ function Header () {
           <div className="headerItem">Explore</div>
         </Link>
       
-        <Link to="collection">
+        {/* <Link to="collection">
           <div className="headerItem">Collection</div>
-        </Link>
+        </Link> */}
 
       </div>
 
