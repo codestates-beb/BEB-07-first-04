@@ -24,7 +24,23 @@ const getItemsByCollectionAddress = async (contractAddress) => {
   }
 };
 
+const getItemByCollAddrAndTokenId = async (collectionAddress, tokenId) => {
+  try {
+    const item = await prisma.items.findMany({
+      where: {
+        collectionAddress,
+        tokenId,
+      },
+    });
+    return item;
+  } catch (e) {
+    console.log(e);
+    return null;
+  }
+};
+
 module.exports = {
   getItemsByCollectionAddress,
   getItemsByOwnerAddress,
+  getItemByCollAddrAndTokenId,
 };

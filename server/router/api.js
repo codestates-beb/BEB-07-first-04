@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-const user = require('./user/user');
-
-const { apiGetUser } = require(`./user/user`);
+const userRouter = require('./user/user');
+const itemRouter = require('./items/items');
 
 router.get('/', (req, res) => {
   res.send('hello');
 });
 
-router.use('/user', user);
+router.use('/user', userRouter);
+router.use('/items', itemRouter);
 
 module.exports = router;

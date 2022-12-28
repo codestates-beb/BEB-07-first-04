@@ -10,8 +10,12 @@ const {
 
 router.post('/get', async (req, res) => {
   const body = req.body;
+  if (typeof body.walletAddress === undefined || Object.keys(body).length !== 1)
+    return res.status(400).send({ status: 'Failed', content: 'Bad Request' });
   const getUserRes = await getUser(body.walletAddress);
-  res.status(200).send(getUserRes);
+  if (getUserRes)
+    res.status(200).send({ status: 'Success', content: getUserRes });
+  else res.status(418).send({ status: 'Failed', content: 'Failed' });
 });
 
 router.post('/updateusername', async (req, res) => {
@@ -58,7 +62,8 @@ router.post('/updatebgpic', async (req, res) => {
     body.walletAddress,
     body.backgroundPicUrl
   );
-  if (updateRes) res.status(200).send(updateRes);
+  if (updateRes)
+    res.status(200).send({ status: 'success', content: 'BGPic changed' });
   else res.status(418).send({ status: 'Failed', content: 'Failed' });
 });
 
