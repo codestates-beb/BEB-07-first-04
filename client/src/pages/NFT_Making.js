@@ -11,7 +11,6 @@ import {create} from 'ipfs-http-client';
 
 import contractAddress from '../contract/ContractAddress';
 
-import imgLoad from '../components/NFT/NFT_ImgLoad';
 // const contractAddress = "0x13911Cb6899A8fBd771806E17f45B742d11B010f"
 
 const projectId = '2JULpqFvMACL4Y7410ulfOmqmVF';   // <---------- your Infura Project ID
