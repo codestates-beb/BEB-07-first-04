@@ -8,11 +8,11 @@ import { Buffer } from 'buffer';
 
 import contractAbi from '../contract/MakingNFT_ABI';
 import {create} from 'ipfs-http-client';
-import { IpfsImage } from 'react-ipfs-image';
 
+import contractAddress from '../contract/ContractAddress';
 
-// const ipfsClient = require("ipfs-http-client");
-const contractAddress = '0x13911Cb6899A8fBd771806E17f45B742d11B010f';
+import imgLoad from '../components/NFT/NFT_ImgLoad';
+// const contractAddress = "0x13911Cb6899A8fBd771806E17f45B742d11B010f"
 
 const projectId = '2JULpqFvMACL4Y7410ulfOmqmVF';   // <---------- your Infura Project ID
 
@@ -26,7 +26,6 @@ const NFT_Making = () => {
     const [name,setName] = React.useState('');
     const [description,setDescription] = React.useState(null);
     const [imgURL,setImgURL] = React.useState('');
-    const [tokenId, setTokenId] = React.useState(-1);
 
     const client = create({
         host: 'ipfs.infura.io',
@@ -44,7 +43,7 @@ const NFT_Making = () => {
 
     const handleImgChange = (e)=>{
         const curImgFile = e.target.files[0];
-        console.log(curImgFile);
+        // console.log(curImgFile);
         const reader = new FileReader();
         reader.readAsDataURL(curImgFile);
         reader.onload = function() {
@@ -56,7 +55,7 @@ const NFT_Making = () => {
     const submitImage = async () => {
        
         if(!imgFile) return false;
-        console.log(imgFile);
+        // console.log(imgFile);
         try{
           let added = await client.add(
             imgFile,
@@ -64,9 +63,9 @@ const NFT_Making = () => {
                 progress: (prog) => console.log(`received: ${prog}`)
             }
           )
-          console.log(added);
+          // console.log(added);
           const url = `https://making.infura-ipfs.io/ipfs/${added.path}`;
-          console.log(url)
+          // console.log(url)
           setImgURL(added.path);
           return uploadMetaData(url)
         }catch(e){
@@ -106,13 +105,23 @@ const NFT_Making = () => {
 
         const ContractWithSigner = await provider.send("eth_requestAccounts", []).then( _=>provider.getSigner()).then(signer=>makingContract.connect(signer));
         
-        ContractWithSigner.functions.mintNFT(ethereum.selectedAddress, submitImage()).then(console.log);
+        // console.log(ethereum.selectedAddress);
+        newTokenId = await ContractWithSigner.functions.mintNFT(ethereum.selectedAddress, submitImage());
+        // newTokenId = await makingContract.mintNFT(ethereum.selectedAddress, submitImage());
+        // console.log();
+        // ContractWithSigner.functions.balanceOf(ethereum.selectedAddress).then(console.log);
         makingContract.name().then(console.log);
         
     }
     // makingContract.name().then(console.log);
     // makingContract.owner().then(console.log);
-    
+    // makingContract.tokenURI(20).then(e=>{
+    //   axios.get(e).then((res)=>{
+    //     console.log(res.data.image);
+    //     axios.get(res.data.image).then((e)=>{console.log(e.data); setImgURL(e.data)});
+    //   });
+    // });
+    // console.log(makingContract)
 
     return (
         <div>
@@ -135,8 +144,7 @@ const NFT_Making = () => {
             
             <p> </p>
             <Button variant="contained" onClick={handleClickCreate}>Create</Button>
-
-            {/* <p>{tokenId}</p> */}
+            <img src ={imgURL}/>
         </div>
     )
 }
