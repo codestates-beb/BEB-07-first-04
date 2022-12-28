@@ -1,0 +1,87 @@
+.footerMain {
+    left:0;
+    bottom:0;
+    height: 190;
+    margin-right: 0.5rem;
+    background-color: #1C69DA;
+    width: 100vw;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .footerItems {
+    display: flex;
+    align-items: right;
+   
+  }
+  .githubIcon {
+    color:   #fff;
+    margin-top: 8px;
+    margin-right: 1.5rem;
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  
+  .githubIcon:hover {
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .twitterIcon {
+    color:   #fff;
+    margin-top: 8px;
+    margin-right: 1.5rem;
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  
+  .twitterIcon:hover {
+    color: #fff;
+    cursor: pointer;
+  }
+  .facebookIcon {
+    color:   #fff;
+    margin-top: 8px;
+    margin-right: 1.5rem;
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  
+  .facebookIcon:hover {
+    color: #fff;
+    cursor: pointer;
+  }
+  .instagramIcon {
+    color:   #fff;
+    margin-top: 8px;
+    margin-right: 1.5rem;
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  
+  .instagramIcon:hover {
+    color: #fff;
+    cursor: pointer;
+  }
+  .youtubeIcon {
+    color:   #fff;
+    margin-top: 8px;
+    margin-right: 1.5rem;
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  
+  .youtubeIcon:hover {
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .footerUnder {
+    color : #fff;
+    font-size :1.1rem;
+  }

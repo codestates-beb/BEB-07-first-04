@@ -1,4 +1,4 @@
-*{
+headerMain * {
     margin :0;
     padding:0;
     text-decoration :none;
@@ -111,4 +111,13 @@
   .profileIcon:hover {
     color: #fff;
     cursor: pointer;
+  }
+
+  .isConnectedContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: #fff;
+    padding-right: 1rem;
+    font-weight: 500;
   }
