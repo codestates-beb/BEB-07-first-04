@@ -1,20 +1,25 @@
 #id_div{
-  width: 250px;
+  width: 230px;
   height: 350px;
-  background-color: skyblue;
+  background-color: white;
   margin: 10px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 1px 1px 20px -5px #333333;
 }
 
 #item_img{
-  margin:15px;
-  width: 220px;
-  height: 220px;
+  /* margin:15px; */
+  object-fit: contain;
+  width:100%;
 }
 
 #item_name{
-  margin-top:0px;
+  margin-top:15px;
   margin-left:15px;
+  margin-bottom: 5px;
 }
+
 #item_collection{
   margin-top:0px;
   margin-left:15px;

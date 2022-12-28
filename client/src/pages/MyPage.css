@@ -2,6 +2,23 @@
   flex-wrap: wrap;
   display: flex;
   align-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(20%, auto));
   gap: 20px;
+  grid-row: 4/5;
+  margin-left: 1.5vw;
+}
+
+#userprofile{
+  position:absolute;
+  top: 220px;
+  left: 2.2vw;
+}
+
+#mypage{
+  display: grid;
+  grid-template-rows: 300px 180px 50px minmax(300px,auto)
+}
+
+#menubar{
+  grid-row: 3/4;
+  margin-left: 2.2vw;
 }
