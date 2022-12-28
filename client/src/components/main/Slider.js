@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Slider.css";
 import Swiper from "./Swiper";
@@ -12,11 +12,19 @@ const Slider = () => {
         let newIndex = currentIndex + direction;
         if(newIndex>=4) newIndex =0;
         if(newIndex<0) newIndex =3;
-        console.log(newIndex)
+        
         setCurrentIndex(newIndex);
     }
 
+    // 데이터 fetch
+    // useEffect(()=>{
+    //     fetch
+    // },[]);
+
     return <div className="main-slider">
+        {[...Array(50)].map((_,i)=>{
+            return <div class="snowflake"></div>
+        })}
         <div className="main-slider-heading-wrapper">
             <h1>Explore, collect and sell NFTs</h1>
         </div>
@@ -33,7 +41,16 @@ const Slider = () => {
             </button>
             <div className="main-swiper-container"
                 style={{ transform: `translateX(${ (-1*currentIndex *25)}%)`}}>
-                 <Link to='#'><Swiper></Swiper></Link>   
+                {/* 데이터를 뿌려준다. 
+                    Ex) [].map((e)=>{
+                        return   <Link to='/collection/e.collectionTitle'>
+                                    <Swiper imgUrl = {e.imgUrl} colllectionTitle = {e.collectionTitle} floorPrice = {e.floorPrice} />
+                                </Link>   
+                        
+                    })
+                 */}
+                
+                 <Link to='/collection'><Swiper></Swiper></Link>   
                  <Link to='#'><Swiper></Swiper></Link>   
                  <Link to='#'><Swiper></Swiper></Link>   
                  <Link to='#'><Swiper></Swiper></Link>   

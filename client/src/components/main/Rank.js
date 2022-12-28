@@ -2,7 +2,7 @@ import React from "react";
 import './Rank.css'
 
 
-const Rank = ({i}) => {
+const Rank = ({i,imgUrl,collectionTitle,floorPrice,marketCap}) => {
 
 
     return <div className="main-ranker-rank">

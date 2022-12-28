@@ -2,7 +2,7 @@ import React from "react";
 import './Exploreitem.css';
 
 
-const Exploreitem = () => {
+const Exploreitem = ({bgImgUrl,imgUrl,collectionTitle}) => {
     return <div className="explore-item">
         <div className="explore-item-img">
             <img src="https://i.seadn.io/gcs/files/f08a6604542b1c9bf10a04111ab35622.jpg?auto=format&w=3840"></img>

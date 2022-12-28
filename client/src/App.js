@@ -21,6 +21,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Main></Main>}></Route>
         <Route path='/collection' element={<Collection></Collection>}></Route>
+        <Route path='/collection/:collectionTitle' element={<Collection></Collection>}></Route>
         
         <Route path='/explore' element={<Explore></Explore>}></Route>
         <Route path='/mypage' element={<Mypage></Mypage>}></Route>
