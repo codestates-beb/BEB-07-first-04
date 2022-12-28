@@ -5,7 +5,7 @@ import Swiper from "./Swiper";
 
 
 
-const Slider = () => {
+const Slider = ({children}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const handleButtonClick = (direction) => {
@@ -21,25 +21,20 @@ const Slider = () => {
     //     fetch
     // },[]);
 
-    return <div className="main-slider">
-        {[...Array(50)].map((_,i)=>{
-            return <div class="snowflake"></div>
-        })}
-        <div className="main-slider-heading-wrapper">
-            <h1>Explore, collect and sell NFTs</h1>
-        </div>
-        <div className="main-swiper-container-wrapper">
+    return <div className="slider">
+
+        <div className="swiper-container-wrapper">
             <button 
-                className="main-slider-arrow-button main-slider-left-arrow"
+                className="slider-arrow-button slider-left-arrow"
                 onClick={()=>{handleButtonClick(-1)}}>
                 <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24"><path d="M10.957,12.354a.5.5,0,0,1,0-.708l4.586-4.585a1.5,1.5,0,0,0-2.121-2.122L8.836,9.525a3.505,3.505,0,0,0,0,4.95l4.586,4.586a1.5,1.5,0,0,0,2.121-2.122Z"/></svg>
             </button>
             <button 
-                className="main-slider-arrow-button main-slider-right-arrow"
+                className="slider-arrow-button slider-right-arrow"
                 onClick={()=>{handleButtonClick(1)}}>
             <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" ><path d="M15.75,9.525,11.164,4.939A1.5,1.5,0,0,0,9.043,7.061l4.586,4.585a.5.5,0,0,1,0,.708L9.043,16.939a1.5,1.5,0,0,0,2.121,2.122l4.586-4.586A3.505,3.505,0,0,0,15.75,9.525Z"/></svg>
             </button>
-            <div className="main-swiper-container"
+            <div className="swiper-container"
                 style={{ transform: `translateX(${ (-1*currentIndex *25)}%)`}}>
                 {/* 데이터를 뿌려준다. 
                     Ex) [].map((e)=>{
@@ -49,8 +44,10 @@ const Slider = () => {
                         
                     })
                  */}
-                
-                 <Link to='/collection'><Swiper></Swiper></Link>   
+                {
+                    children
+                }
+                 {/* <Link to='/collection'><Swiper></Swiper></Link>   
                  <Link to='#'><Swiper></Swiper></Link>   
                  <Link to='#'><Swiper></Swiper></Link>   
                  <Link to='#'><Swiper></Swiper></Link>   
@@ -65,7 +62,7 @@ const Slider = () => {
                  <Link to='#'><Swiper></Swiper></Link>   
                  <Link to='#'><Swiper></Swiper></Link>   
                  <Link to='#'><Swiper></Swiper></Link>   
-                 <Link to='#'><Swiper></Swiper></Link>   
+                 <Link to='#'><Swiper></Swiper></Link>    */}
                 
   
             </div>
