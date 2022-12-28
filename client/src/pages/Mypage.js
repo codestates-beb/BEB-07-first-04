@@ -41,7 +41,12 @@ const Mypage = () => {
       </div>
       <div id="items">
         {items.map((e) => (
-          <Item img={e.img} name={e.name} collection={e.collection} />
+          <Item
+            className={`item${items.indexOf(e)}`}
+            img={e.img}
+            name={e.name}
+            collection={e.collection}
+          />
         ))}
       </div>
     </div>

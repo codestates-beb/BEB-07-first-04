@@ -4,12 +4,13 @@
   align-items: center;
   gap: 20px;
   grid-row: 4/5;
+  margin-left: 1.5vw;
 }
 
 #userprofile{
   position:absolute;
   top: 220px;
-  left: 50px;
+  left: 2.2vw;
 }
 
 #mypage{
@@ -18,5 +19,6 @@
 }
 
 #menubar{
-  grid-row: 3/4
+  grid-row: 3/4;
+  margin-left: 2.2vw;
 }
