@@ -22,7 +22,7 @@ const Nftcard = () => {
                 <p>ends in 3days</p>
             </div>
             <div className={isHovering ? 'collection-nftcard-buy-button collection-nftcard-buy-button-appear ' : 'collection-nftcard-buy-button'}><h5 className={isActive ? 'collection-nftcard-buy-button-active' : 'collection-nftcard-buy-button-not-active'}>Buy Now</h5></div>
-
+            
         </div>
     );
 };

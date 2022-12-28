@@ -1,10 +1,16 @@
-import * as React from 'react';
+import React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import { positions } from '@mui/system';
-import { Grid,Container } from '@mui/material';
+import { Grid} from '@mui/material';
 
-const NFT_Making = () => {
+import axios from 'axios';
+import { ethers } from 'ethers';
+import contractAddress from '../contract/ContractAddress';
+import contractAbi from '../contract/MakingNFT_ABI'
+
+import { useLocation } from "react-router-dom";
+
+const NFT_Transaction = () => {
     const [imgFile, setImgFile] = React.useState(null);
     const [name,setName] = React.useState('제목');
     const [description,setDescription] = React.useState('설명');
@@ -13,6 +19,26 @@ const NFT_Making = () => {
     const handleClickBuy = ()=>{
         if((name == null || imgFile == null)) { console.log('null'); return false; }
     }
+    const location = useLocation();
+    const tokenId = location.state.tokenId;
+    const ethereum = window.ethereum;
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const makingContract = new ethers.Contract(contractAddress, contractAbi, provider);
+
+    makingContract.tokenURI(tokenId).then(e=>{
+        // console.log(e);
+        axios.get(e).then((res)=>{
+            // console.log(res);
+            setName(res.data.name);
+            setDescription(res.data.description);
+            axios.get(res.data.image).then((e)=>{
+                // console.log(e.data); 
+                setImgFile(e.data);
+            });
+        });
+    });
+
+    
 
     return (
         <Grid>
@@ -41,4 +67,4 @@ const NFT_Making = () => {
     )
 }
 
-export default NFT_Making;
+export default NFT_Transaction;
