@@ -10,7 +10,10 @@ const {
 
 router.get('/get', async (req, res) => {
   const body = req.body;
-  if (typeof body.walletAddress === undefined || Object.keys(body).length !== 1)
+  if (
+    typeof body.walletAddress === 'undefined' ||
+    Object.keys(body).length !== 1
+  )
     return res.status(400).send({ status: 'Failed', content: 'Bad Request' });
   const getUserRes = await getUser(body.walletAddress);
   if (getUserRes)
@@ -20,7 +23,11 @@ router.get('/get', async (req, res) => {
 
 router.post('/updateusername', async (req, res) => {
   const body = req.body;
-  if (typeof body.walletAddress === undefined)
+  if (
+    typeof body.walletAddress === 'undefined' ||
+    typeof body.username === 'undefined' ||
+    Object.keys(body).length !== 2
+  )
     return res.status(400).send({ status: 'Failed', content: 'Bad Request' });
   const updateRes = await updateUsername(body.walletAddress, body.username);
   if (updateRes)
@@ -31,8 +38,8 @@ router.post('/updateusername', async (req, res) => {
 router.post('/updateprofpic', async (req, res) => {
   const body = req.body;
   if (
-    typeof body.walletAddress === undefined ||
-    typeof body.profilePicUrl === undefined ||
+    typeof body.walletAddress === 'undefined' ||
+    typeof body.profilePicUrl === 'undefined' ||
     Object.keys(body).length !== 2
   )
     return res.status(400).send({ status: 'Failed', content: 'Bad Request' });
@@ -53,8 +60,8 @@ router.post('/updateprofpic', async (req, res) => {
 router.post('/updatebgpic', async (req, res) => {
   const body = req.body;
   if (
-    typeof body.walletAddress === undefined ||
-    typeof body.backgroundPicUrl === undefined ||
+    typeof body.walletAddress === 'undefined' ||
+    typeof body.backgroundPicUrl === 'undefined' ||
     Object.keys(body).length !== 2
   )
     return res.status(400).send({ status: 'Failed', content: 'Bad Request' });
@@ -63,7 +70,7 @@ router.post('/updatebgpic', async (req, res) => {
     body.backgroundPicUrl
   );
   if (updateRes)
-    res.status(200).send({ status: 'success', content: 'BGPic changed' });
+    res.status(200).send({ status: 'Success', content: 'BGPic changed' });
   else res.status(418).send({ status: 'Failed', content: 'Failed' });
 });
 
