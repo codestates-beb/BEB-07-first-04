@@ -1,0 +1,97 @@
+.collection-nftcard{
+    width: 200px;
+    height: 300px;
+    box-shadow: rgb(0 0 0 / 8%) 0px 5px 10px;
+
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.collection-nftcard-img-wrapper{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.collection-nftcard-img  {
+    width: 100%;
+
+    box-shadow: rgb(0 0 0 / 8%) 0px 5px 10px;
+    transform: scale(1);
+    transition: all 0.2s ease-in-out;
+}
+.img-scale-1-2 {
+    transform: scale(1.2);
+}
+
+
+.collection-nftcard-description {
+    padding: 15px;
+}
+.collection-nftcard-description >h5 {
+    color: black;
+    margin: 0.6em 0;
+}
+.collection-nftcard-description > p{
+    color: gray;
+    font-size: .5em;
+}
+
+.collection-nftcard-wrapper-etherlogo{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color:  rgba(159, 159, 159, 0.4);
+    position: absolute;
+    z-index: 1;
+    top: 3px;
+    left: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.opacity-1{
+    opacity: 1;
+}
+
+.collection-nftcard-wrapper-etherlogo > svg{
+    
+    width: 20px;
+    fill: black;
+}
+
+.collection-nftcard-buy-button{
+    width: 100%;
+    height: 2em;
+    background-color: rgb(21, 178, 229);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    bottom: -2em;
+    transition: all 0.2s ease-in-out;
+}
+
+.collection-nftcard-buy-button-active{
+    transform: scale(1.2);
+}
+
+.collection-nftcard-buy-button-appear{
+    bottom: 0;
+}
+
+.collection-nftcard-buy-button > h5{
+    color: white;
+}
+
+.collection-nftcard-buy-button-not-active{
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+}

@@ -1,0 +1,45 @@
+.main-slider-swiper{
+    box-sizing: border-box;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: gray;
+    cursor: pointer;
+
+
+    
+    border-radius: 25px;
+    margin-right: 16px;
+    overflow: hidden;
+}
+
+.main-slider-swiper-bgimg{
+    object-fit: cover;
+    width: 100%;
+    transform: scale(1);
+    transition: all 0.2s ease-in-out; 
+}
+
+
+.main-slider-swiper-bgimg:hover{
+    transform: scale(1.1);
+}
+
+.main-slider-swiper-description{
+    position:absolute;
+    bottom: 10px;
+    margin-left: 20px;
+    color: #eee;
+    
+}
+.main-slider-swiper-description > h5{
+    margin: 0;
+    padding: 0;
+}
+
+.main-slider-swiper-description > span {
+    font-size: 0.5em;
+    font-weight: 600;
+}
+
+
