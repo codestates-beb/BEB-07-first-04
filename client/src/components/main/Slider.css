@@ -23,7 +23,9 @@
     width: max-content;
     display: flex;
     flex-wrap: wrap;
-    gap: calc((100vw - 1000px)/10 );
+    gap: calc((100vw - 1280px - 16px)/3 );
+    gap: 30px;
+
     padding: 0 16px;
 
     transition: all 0.5s ease-in-out;
@@ -52,15 +54,15 @@
     cursor: pointer;
 }
 
+.main-slider-arrow-button:hover > svg{
+    fill:black;
+}
+
 
 .main-slider-arrow-button > svg{
     width: 38px;
     height: 38px;
     fill:#fff;
-}
-
-.main-slider-arrow-button > svg:hover{
-    fill:black;
 }
 
 .main-slider-right-arrow{
