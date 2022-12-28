@@ -1,5 +1,6 @@
 import React from "react";
 import Exploreitems from "../components/explore/Exploreitems";
+import Header from "../components/Header";
 import Navtap from "../components/Navtap";
 import './Explore.css'
 

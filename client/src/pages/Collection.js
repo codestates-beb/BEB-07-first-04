@@ -1,6 +1,7 @@
 import React from 'react';
 import Nftcard from '../components/collection/Nftcard';
 import Nftitems from '../components/collection/Nftitems';
+import Header from '../components/Header';
 import './Collection.css'
 
 const Collection = () => {
