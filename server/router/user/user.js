@@ -8,7 +8,7 @@ const {
   updateUsername,
 } = require(`../../prismaScripts/user`);
 
-router.post('/get', async (req, res) => {
+router.get('/get', async (req, res) => {
   const body = req.body;
   if (typeof body.walletAddress === undefined || Object.keys(body).length !== 1)
     return res.status(400).send({ status: 'Failed', content: 'Bad Request' });
