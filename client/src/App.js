@@ -4,6 +4,8 @@ import Main from './pages/Main';
 import Collection from './pages/Collection';
 import Explore from './pages/Explore';
 import Mypage from './pages/Mypage';
+import Header from './components/Header'
+import Footer from './components/Footer'
 import NFT_Making from './pages/NFT_Making';
 import NFT_Transaction from './pages/NFT_Transaction';
 
@@ -15,7 +17,7 @@ function App() {
   const [isConnected, setConnected] = useState(false);
   return (
     <div className="App">
-      여기에 헤더가 들어가나요
+      <Header />
       <Routes>
         <Route path='/' element={<Main></Main>}></Route>
         <Route path='/collection' element={<Collection></Collection>}></Route>
@@ -38,6 +40,7 @@ function App() {
         {/* <Route path='/NFT_Making' element={<NFT_Making />} />
         <Route path='/NFT_Transaction' element={<NFT_Transaction />} /> */}
       </Routes>
+      <Footer />
     </div>
   );
 }
