@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Nftcard from './Nftcard';
 import reload_logo from '../../assets/reload.png';
-import NFT_Transaction from '../../pages/NFT_Transaction';
+import axios from 'axios';
 
 import './Nftitems.css'
 import useInterval from './useInterval';
@@ -10,6 +10,7 @@ import useInterval from './useInterval';
 
 const Nftitems = () => {
     const [count,setCount] = useState(0);
+
     useInterval(() => {
         // Your custom logic here
         setCount(count + 1);
