@@ -6,17 +6,22 @@ import Swiper from './Swiper';
 import star from '../../assets/chirstmas/star.png'
 import ball from '../../assets/chirstmas/ball.png'
 import gift from '../../assets/chirstmas/gift.png'
-
 import axios from 'axios';
 
-const Mainslider = () => {
+const SERVER_URL = 'http://localhost:8080/api/collection/data';
+const Mainslider =  () => {
+    const contractAddress = '0x13313';
+    const getCollection = async () =>{
+        const response = await axios.put(SERVER_URL,{
+            contractAddress:contractAddress}
+        );
+        console.log(response);
+    }
 
     useEffect(()=>{
-        axios.get('http://localhost:8080/api/collection/info',{
-            contractAddress: '0x13313'
-        })
-        .then(res=>console.log(res));
-    },[])
+        getCollection();
+    },[]);
+    
 
     return (
         <div className="mainslider">

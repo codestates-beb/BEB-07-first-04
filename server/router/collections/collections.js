@@ -13,6 +13,7 @@ const {
 
 router.get('/databyname', async (req, res) => {
   const body = req.body;
+  console.log(body);
   if (
     typeof body.collectionName === 'undefined' ||
     Object.keys(body).length !== 1
@@ -28,8 +29,10 @@ router.get('/databyname', async (req, res) => {
   else return res.status(418).send({ status: 'Failed', content: 'Failed' });
 });
 
-router.get('/info', async (req, res) => {
+router.put('/info', async (req, res) => {
   const body = req.body;
+  console.log(req.headers);
+
   if (
     typeof body.contractAddress === 'undefined' ||
     Object.keys(body).length !== 1
@@ -44,8 +47,10 @@ router.get('/info', async (req, res) => {
   else return res.status(418).send({ status: 'Failed', content: 'Failed' });
 });
 
-router.get('/data', async (req, res) => {
+router.put('/data', async (req, res) => {
   const body = req.body;
+  console.log(body);
+
   if (
     typeof body.contractAddress === 'undefined' ||
     Object.keys(body).length !== 1

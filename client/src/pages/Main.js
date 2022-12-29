@@ -7,6 +7,8 @@ import Slider from "../components/main/Slider";
 import './Main.css'
 
 const Main = () => {
+
+
     return <div className="Main">
         <Mainslider></Mainslider>
         <Ranker></Ranker>
@@ -26,6 +28,7 @@ const Main = () => {
                 })
             }
         </Slider>
+
 
     </div>
 }
