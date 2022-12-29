@@ -1,9 +1,14 @@
 import React from 'react';
-import Nftcard from '../components/collection/Nftcard';
+import { useParams } from 'react-router-dom';
 import Nftitems from '../components/collection/Nftitems';
 import './Collection.css'
 
 const Collection = () => {
+    const {collectionTitle} = useParams();
+
+    //collectionTitle을 활용해 데이터 받아오기
+    //bgImgUrl, imgUrl, numOfItes, chainTitle, createdAt, NFTs{ nftImgUrl, id, price,}
+
     return (
         <div className='collection'>
             <div className='collection-background'>
