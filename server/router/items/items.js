@@ -7,7 +7,7 @@ const {
   getItemByCollAddrAndTokenId,
 } = require('../../prismaScripts/items');
 
-router.get('/getbycollectionaddr', async (req, res) => {
+router.put('/getbycollectionaddr', async (req, res) => {
   const body = req.body;
   if (
     typeof body.contractAddress == 'undefined' ||
@@ -22,7 +22,7 @@ router.get('/getbycollectionaddr', async (req, res) => {
   else return res.status(418).send({ status: 'Failed', content: 'Failed' });
 });
 
-router.get('/getbyowneraddr', async (req, res) => {
+router.put('/getbyowneraddr', async (req, res) => {
   const body = req.body;
   if (
     typeof body.walletAddress == 'undefined' ||
@@ -37,7 +37,7 @@ router.get('/getbyowneraddr', async (req, res) => {
   else return res.status(418).send({ status: 'Failed', content: 'Failed' });
 });
 
-router.get('/getmetadata', async (req, res) => {
+router.put('/getmetadata', async (req, res) => {
   const body = req.body;
   if (
     typeof body.contractAddress === 'undefined' ||
