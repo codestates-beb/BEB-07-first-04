@@ -1,23 +1,30 @@
 import React from "react";
 import { AiFillGithub,AiFillTwitterCircle,AiFillFacebook,AiFillInstagram,AiFillYoutube } from "react-icons/ai";
-import { Link } from "react-router-dom";
 import './Footer.css'
 const Footer = () =>{
     return (
       
       <div className="footerMain">
-      <Link to="/">    
-        <div className="logoContainer">
-          <div className="logoText">OpenC</div>
-          <input className="emailBar"placeholder="your email address"></input>
-          <button>Subscribe</button>
-        </div>
-      </Link>
+        <div className="footerContainer">
+          <div className="footerRow">
+            <div className="footerHalf">
+              <div className="footerSection">Stay in the loop </div>
+              <div className='footertext'>Join our mailing list to stay in the loop with our newest feature releases, NFT drops, and tips and tricks for navigating OpenC</div>
+              <input className="mailAddress"placeholder="Your email address"></input>
+              <div className='mailingSignupForm'>
+      
+              </div>
+            </div>
+          </div>
+       
+   
 
       <div className="footerItems">
+        <a class href="https://github.com/codestates-beb/BEB-07-first-04">
         <div className="githubIcon">
           <AiFillGithub/>
         </div>
+        </a>
       
         <div className="twitterIcon">
           <AiFillTwitterCircle />
@@ -36,10 +43,11 @@ const Footer = () =>{
       </div>
       
       <div className="footerUnder">
-        <p>© 2022 BEB,07, Inc</p>
+        <p>© 2022 BEB-07-Team4</p>
       </div>
     
-    </div>    
+      </div>    
+    </div>
     )
   }
 

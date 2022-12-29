@@ -5,7 +5,7 @@ headerMain * {
 }
 .headerMain {
     background-color: #04111d;
-    width: 100vw;
+    width: 99vw;
     padding-left: 1.2rem;
     padding-right: 1.2rem;
     padding-top: 0.8rem;
@@ -90,7 +90,7 @@ headerMain * {
   .walletIcon {
     color:   #c8cacd;
     margin-top: 8px;
-    margin-right: 3.5rem;
+    margin-right: 3rem;
     font-size: 1.875rem;
     line-height: 2.25rem;
   }
@@ -103,7 +103,7 @@ headerMain * {
   .profileIcon {
     color:   #c8cacd;
     margin-top: 8px;
-    margin-right: 3.5rem;
+    margin-right: 3rem;
     font-size: 1.875rem;
     line-height: 2.25rem;
   }

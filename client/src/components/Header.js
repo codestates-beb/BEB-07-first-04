@@ -33,9 +33,7 @@ function Header () {
     if(!accounts[0]) {
       document.location.href = "/"
       alert('Please Connect Wallet')
-    } else {
-      document.location.href = "/mypage"
-    }
+    } 
   } 
 
   const connectWallet = async () => {
@@ -113,7 +111,7 @@ function Header () {
           <AiOutlineWallet onClick={()=>connectWallet()}/>
         </div>
         <div className="isConnectedContainer">
-          {walletAddress.length>0 ? `Connected :` `${walletAddress.substring(0,6)}...${walletAddress.substring(38)}` : "Not Connected"}
+          {walletAddress.length>0 ? `Connected :${walletAddress.substring(0,6)}...${walletAddress.substring(38)}` : "Not Connected"}
         </div>
 
 

@@ -14,6 +14,34 @@
     justify-content: space-around;
   }
 
+  .footerContainer{
+    padding-right: 64px;
+       margin-left: 0.4rem;
+    color: #fff;
+    font-size: 1.3rem;
+    line-height: 2rem;
+  }
+  .footerSection{
+    font-weight: 800;
+  }
+
+  .footerText{
+    font-weight: 400;
+  }
+  .mailAddress{
+    cursor: text;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 12px;
+    border: 2px solid rgb(229, 232, 235);
+    color: rgb(4, 17, 29);
+    width: 40%;
+    padding: 12px;
+    height:20px;
+    font-size: 16px;
+  }
+
   .footerItems {
     display: flex;
     align-items: right;
