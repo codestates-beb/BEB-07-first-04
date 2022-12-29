@@ -1,4 +1,5 @@
 .footerMain {
+    overflow-x:hidden ;
     left:0;
     bottom:0;
     height: 190;
