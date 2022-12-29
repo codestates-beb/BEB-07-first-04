@@ -1,32 +1,37 @@
-.main-slider{
+.slider{
     height: max-content;
-    overflow-x: hidden;
+    overflow: hidden;
+    background: transparent;
+    position: relative;
 }
 
-.main-slider-heading-wrapper{
+.slider-heading-wrapper{
     display: flex;
     justify-content: center;
 }
 
-.main-slider-heading-wrapper > h1{
+.slider-heading-wrapper > h1{
     margin: 40px ;
     width: fit-content;
 }
 
-.main-swiper-container-wrapper{
+.swiper-container-wrapper{
     position: relative;
 
 }
-.main-swiper-container{
+.swiper-container{
     width: max-content;
     display: flex;
     flex-wrap: wrap;
-    padding: 0 16px;
+    gap: calc((100vw - 1280px - 16px)/5 );
+    gap: 30px;
+
+    padding: 0 20px;
 
     transition: all 0.5s ease-in-out;
 }
 
-.main-slider-arrow-button{
+.slider-arrow-button{
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -42,25 +47,26 @@
     border-radius: 24px;
     background-color: rgba(4, 17, 29, 0.3);
     z-index: 1;
+    transition: all 0.2s ease-in-out;
 }
 
-.main-slider-arrow-button:hover{
+.slider-arrow-button:hover{
     background-color: #fff;
-    cursor: pointer;
+    box-shadow: (0 0 0 / 25%) 0px 5px 10px;
+}
+
+.slider-arrow-button:hover > svg{
+    fill:black; 
 }
 
 
-.main-slider-arrow-button > svg{
+.slider-arrow-button > svg{
     width: 38px;
     height: 38px;
-    fill:#fff;
+    fill: #fff;
 }
 
-.main-slider-arrow-button > svg:hover{
-    fill:black;
-}
-
-.main-slider-right-arrow{
+.slider-right-arrow{
     right: 0;
 }
 

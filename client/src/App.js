@@ -11,6 +11,7 @@ import NFT_Transaction from './pages/NFT_Transaction';
 
 import ConnectWallet from './pages/connectWallet';
 import { useState } from 'react';
+import Page404 from './pages/Page404';
 
 function App() {
   const [walletAddress, setWalletAddress] = useState('');
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Main></Main>}></Route>
         <Route path='/collection' element={<Collection></Collection>}></Route>
+        <Route path='/collection/:collectionTitle' element={<Collection></Collection>}></Route>
         
         <Route path='/explore' element={<Explore></Explore>}></Route>
         <Route path='/mypage' element={<Mypage></Mypage>}></Route>
@@ -37,8 +39,7 @@ function App() {
             />
           }
         ></Route>
-        {/* <Route path='/NFT_Making' element={<NFT_Making />} />
-        <Route path='/NFT_Transaction' element={<NFT_Transaction />} /> */}
+        <Route path='/*' element={<Page404></Page404>}></Route>
       </Routes>
       <Footer />
     </div>
