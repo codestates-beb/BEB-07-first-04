@@ -10,6 +10,7 @@ import contractAbi from '../contract/MakingNFT_ABI';
 import {create} from 'ipfs-http-client';
 
 import contractAddress from '../contract/ContractAddress';
+import { json } from 'react-router-dom';
 
 // const contractAddress = "0x13911Cb6899A8fBd771806E17f45B742d11B010f"
 
@@ -64,7 +65,7 @@ const NFT_Making = () => {
           )
           // console.log(added);
           const url = `https://making.infura-ipfs.io/ipfs/${added.path}`;
-          // console.log(url)
+          console.log(url)
           setImgURL(added.path);
           return uploadMetaData(url)
         }catch(e){
@@ -78,8 +79,9 @@ const NFT_Making = () => {
           "description": description,
           "image": url,
         }
-    
+        console.log(JSON.stringify(jsonData));
         const jsonblob = new Blob([JSON.stringify(jsonData)], {type:'application/json'})
+        console.log(jsonblob);
         const jsonFile =  new File([jsonblob], 'data.json')
         try{
           let added = await client.add(
@@ -98,14 +100,14 @@ const NFT_Making = () => {
 
 
     const handleClickCreate = async ()=>{
-        console.log(name, imgFile);
-        let newTokenId = -1;
+        // console.log(name, imgFile);
+        
         if((name == '' || imgFile == null)) { console.log('input is not sain'); return false; }
 
         const ContractWithSigner = await provider.send("eth_requestAccounts", []).then( _=>provider.getSigner()).then(signer=>makingContract.connect(signer));
         
         // console.log(ethereum.selectedAddress);
-        newTokenId = await ContractWithSigner.functions.mintNFT(ethereum.selectedAddress, submitImage());
+        await ContractWithSigner.functions.mintNFT(ethereum.selectedAddress, submitImage());
         // newTokenId = await makingContract.mintNFT(ethereum.selectedAddress, submitImage());
         // console.log();
         // ContractWithSigner.functions.balanceOf(ethereum.selectedAddress).then(console.log);
@@ -139,7 +141,7 @@ const NFT_Making = () => {
             <p> {name} </p>
             <input onChange={(e)=>setName(e.target.value)} value={name} />
             <p> 설명 </p>
-            <input onChange={(e)=>setDescription(e)} />
+            <input onChange={(e)=>setDescription(e.target.value)} />
             
             <p> </p>
             <Button variant="contained" onClick={handleClickCreate}>Create</Button>

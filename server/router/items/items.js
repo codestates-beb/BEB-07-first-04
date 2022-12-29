@@ -53,7 +53,7 @@ router.get('/getmetadata', async (req, res) => {
   if (getMetadataRes.length !== 0)
     return res
       .status(200)
-      .send({ status: 'Success', content: getMetadataRes[0].metaData });
+      .send({ status: 'Success', content: getMetadataRes.metaData });
   else
     return res
       .status(418)
