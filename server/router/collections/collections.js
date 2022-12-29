@@ -11,7 +11,7 @@ const {
   getItemsByCollectionName,
 } = require(`../../prismaScripts/items`);
 
-router.get('/databyname', async (req, res) => {
+router.put('/databyname', async (req, res) => {
   const body = req.body;
   if (
     typeof body.collectionName === 'undefined' ||
@@ -28,7 +28,7 @@ router.get('/databyname', async (req, res) => {
   else return res.status(418).send({ status: 'Failed', content: 'Failed' });
 });
 
-router.get('/info', async (req, res) => {
+router.put('/info', async (req, res) => {
   const body = req.body;
   if (
     typeof body.contractAddress === 'undefined' ||
@@ -44,7 +44,7 @@ router.get('/info', async (req, res) => {
   else return res.status(418).send({ status: 'Failed', content: 'Failed' });
 });
 
-router.get('/data', async (req, res) => {
+router.put('/data', async (req, res) => {
   const body = req.body;
   if (
     typeof body.contractAddress === 'undefined' ||
