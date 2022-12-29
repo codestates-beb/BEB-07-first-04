@@ -25,7 +25,7 @@ const Nftitems = () => {
     const makingContract = new ethers.Contract(contractAddress, contractAbi, provider);
 
     console.log(makingContract)
-
+    
     return (
     <div className='collection-nft'>
         <div className='collection-nft-reload'>
@@ -36,11 +36,11 @@ const Nftitems = () => {
             {
 
             }
-            <Link to={`../NFT_transaction`} state={{tokenId:20}}><Nftcard></Nftcard></Link>
-            <Link to={`../NFT_transaction`} state={{tokenId:15}}><Nftcard></Nftcard></Link>
-            <Link to='#'><Nftcard></Nftcard></Link>
-            <Link to='#'><Nftcard></Nftcard></Link>
-            <Link to='#'><Nftcard></Nftcard></Link>
+            <Link to={`../NFT_transaction`} state={{tokenId:28}}><Nftcard></Nftcard></Link>
+            <Link to={`../NFT_transaction`} state={{tokenId:29}}><Nftcard></Nftcard></Link>
+            <Link to={`../NFT_transaction`} state={{tokenId:30}}><Nftcard></Nftcard></Link>
+            <Link to={`../NFT_transaction`} state={{tokenId:25}}><Nftcard></Nftcard></Link>
+            <Link to={`../NFT_transaction`} state={{tokenId:27}}><Nftcard></Nftcard></Link>
             <Link to='#'><Nftcard></Nftcard></Link>
             <Link to='#'><Nftcard></Nftcard></Link>
             <Link to='#'><Nftcard></Nftcard></Link>

@@ -41,7 +41,12 @@ const NFT_Transaction = () => {
         
     }
 
+    // console.log(makingContract.owner());
     
+    // makingContract.ownerOf(tokenId).then((e)=>{
+    //     makingContract.balanceOf(e).then((res)=>{console.log(res.toNumber())});
+    // });
+    // makingContract.balanceOf();
 
     return (
         <Grid>
