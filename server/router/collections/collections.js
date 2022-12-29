@@ -3,9 +3,30 @@ const router = express.Router();
 
 const {
   getCollectionByContractAddr,
+  getCollectionByName,
 } = require(`../../prismaScripts/collection`);
 
-const { getItemsByCollectionAddress } = require(`../../prismaScripts/items`);
+const {
+  getItemsByCollectionAddress,
+  getItemsByCollectionName,
+} = require(`../../prismaScripts/items`);
+
+router.get('/databyname', async (req, res) => {
+  const body = req.body;
+  if (
+    typeof body.collectionName === 'undefined' ||
+    Object.keys(body).length !== 1
+  )
+    return res.status(400).send({ status: 'Failed', content: 'Bad Request' });
+  const collectionInfo = await getCollectionByName(body.collectionName);
+  const collectionItems = await getItemsByCollectionName(body.collectionName);
+  if (collectionInfo && collectionItems.length !== 0)
+    return res.status(200).send({
+      status: 'Success',
+      content: { collectionInfo, collectionItems },
+    });
+  else return res.status(418).send({ status: 'Failed', content: 'Failed' });
+});
 
 router.get('/info', async (req, res) => {
   const body = req.body;
