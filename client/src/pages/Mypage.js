@@ -4,13 +4,32 @@ import ProfileImg from '../components/MyPage/profileImg';
 import Item from '../components/MyPage/item';
 import UserInfo from '../components/MyPage/userInfo';
 import MenuBar from '../components/MyPage/menubar';
+import { useState } from 'react';
+import axios from 'axios';
 
 //css
 import './MyPage.css';
 
 const Mypage = () => {
+  const [walletAddress, setWalletAddress] = useState('');
+  const getAddress = async () => {
+    const accounts = await window.ethereum.request({
+      method: 'eth_requestAccounts',
+    });
+    setWalletAddress(accounts[0]);
+  };
+  getAddress();
+
+  const [userInfo, setUserInfo] = useState();
   const username = 'Unnamed';
-  const walletAddress = '0xCD0510aEcD00BdD36ac9272f1a905bf775753355';
+  const getUserInfo = async () => {
+    const apiGetRes = await axios.put('http://localhost:8080/api/user/get', {
+      data: { walletAddress },
+    });
+    console.log(apiGetRes);
+  };
+  getUserInfo();
+
   const backgroundImgUrl =
     'https://cdn.discordapp.com/attachments/1056736677932048424/1056736700921032734/image.png';
   const profileImg =
