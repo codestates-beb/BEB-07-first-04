@@ -11,7 +11,7 @@ const {
   getItemsByCollectionName,
 } = require(`../../prismaScripts/items`);
 
-router.get('/databyname', async (req, res) => {
+router.put('/databyname', async (req, res) => {
   const body = req.body;
   console.log(body);
   if (

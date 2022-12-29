@@ -8,7 +8,7 @@ const {
   updateUsername,
 } = require(`../../prismaScripts/user`);
 
-router.get('/get', async (req, res) => {
+router.put('/get', async (req, res) => {
   const body = req.body;
   if (
     typeof body.walletAddress === 'undefined' ||
