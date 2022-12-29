@@ -1,0 +1,115 @@
+.footerMain {
+    left:0;
+    bottom:0;
+    height: 190;
+    margin-right: 0.5rem;
+    background-color: #1C69DA;
+    width: 100vw;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .footerContainer{
+    padding-right: 64px;
+       margin-left: 0.4rem;
+    color: #fff;
+    font-size: 1.3rem;
+    line-height: 2rem;
+  }
+  .footerSection{
+    font-weight: 800;
+  }
+
+  .footerText{
+    font-weight: 400;
+  }
+  .mailAddress{
+    cursor: text;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 12px;
+    border: 2px solid rgb(229, 232, 235);
+    color: rgb(4, 17, 29);
+    width: 40%;
+    padding: 12px;
+    height:20px;
+    font-size: 16px;
+  }
+
+  .footerItems {
+    display: flex;
+    align-items: right;
+   
+  }
+  .githubIcon {
+    color:   #fff;
+    margin-top: 8px;
+    margin-right: 1.5rem;
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  
+  .githubIcon:hover {
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .twitterIcon {
+    color:   #fff;
+    margin-top: 8px;
+    margin-right: 1.5rem;
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  
+  .twitterIcon:hover {
+    color: #fff;
+    cursor: pointer;
+  }
+  .facebookIcon {
+    color:   #fff;
+    margin-top: 8px;
+    margin-right: 1.5rem;
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  
+  .facebookIcon:hover {
+    color: #fff;
+    cursor: pointer;
+  }
+  .instagramIcon {
+    color:   #fff;
+    margin-top: 8px;
+    margin-right: 1.5rem;
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  
+  .instagramIcon:hover {
+    color: #fff;
+    cursor: pointer;
+  }
+  .youtubeIcon {
+    color:   #fff;
+    margin-top: 8px;
+    margin-right: 1.5rem;
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  
+  .youtubeIcon:hover {
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .footerUnder {
+    color : #fff;
+    font-size :1.1rem;
+  }

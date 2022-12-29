@@ -1,7 +1,7 @@
 import React from "react";
 import "./Swiper.css";
 
-const Swiper = () => {
+const Swiper = ({imgUrl,collectionTitle,floorPrice}) => {
 
     return <div className="main-slider-swiper">
             <span className="">

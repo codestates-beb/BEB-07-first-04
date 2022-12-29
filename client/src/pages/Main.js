@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Mainslider from "../components/main/Slider";
+import Mainslider from "../components/main/Mainslider";
 import Nftsmallcard from "../components/main/Nftsmallcard";
 import Ranker from "../components/main/Ranker";
 import Slider from "../components/main/Slider";

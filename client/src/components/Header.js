@@ -7,10 +7,15 @@ import "./Header.css"
 import Web3 from 'web3';
 
 function Header () {
-
-  const [account, setAccount] = useState("");
+  const [walletAddress, setWalletAddress] = useState("");
 	const [web3, setWeb3] = useState();
-   
+
+  
+  useEffect(()=> {
+    getCurrentWalletConnected();
+  });
+
+
     useEffect(() => {
         if (typeof window.ethereum !== "undefined") { 
             try {
@@ -21,13 +26,21 @@ function Header () {
         }
     }, []);
 
+  const isLogin = async()  => {
+    const accounts = await window.ethereum.request({
+      method: "eth_accounts",
+    });
+    if(!accounts[0]) {
+      document.location.href = "/"
+      alert('Please Connect Wallet')
+    } 
+  } 
+
   const connectWallet = async () => {
     try {
-      if (window.ethereum) {
-        const accounts = await window.ethereum.request({
-          method: "eth_requestAccounts",
-        });
-        setAccount(accounts[0]);
+      if (window.ethereum !== "undefined" && typeof window.ethereum !== "undefined") {
+        const accounts = await window.ethereum.request({method: "eth_requestAccounts",});
+        setWalletAddress(accounts[0]);
       } else {
         alert("Please install Metamask.");
       }
@@ -36,28 +49,28 @@ function Header () {
     }
   };
 
-  const isConnected = async () => {
+  const getCurrentWalletConnected = async () => {
     try {
-
-      if (window.ethereum) {
- 
+      if (window.ethereum !== "undefined" && typeof window.ethereum !== "undefined") {
         const accounts = await window.ethereum.request({
-          method: "eth_requestAccounts",
+          method: "eth_accounts",
         });
-        setAccount(accounts[0]);
-
+        if(accounts.length>0){
+          setWalletAddress(accounts[0]);
+        }
+        
       } else {
- 
-        alert("Please install Metamask.");
+        alert("Connect to MetaMask using the Wallet button");
       }
     } catch (error) {
-
       console.error(error); //
     }
   };
+
 
 
   return(
+  
     <div className="headerMain">
       <Link to="/">    
         <div className="logoContainer">
@@ -73,18 +86,10 @@ function Header () {
           <div className="searchIcon">
             <AiOutlineSearch />
           </div>
-         
-
-
-         
           <input 
           className="searchInput" 
           placeholder='Search items, Collections, and Accounts'></input>
         </div>
-       
-     
-
-
 
       <div className="headerItems">
         <Link to="explore">
@@ -94,22 +99,25 @@ function Header () {
         <Link to="collection">
           <div className="headerItem">Collection</div>
         </Link>
-
       </div>
 
       <div className="profileIcon">
       <Link to="mypage">
-        <CgProfile /> 
+      
+        <CgProfile onClick={isLogin}/> 
         </Link>
       </div>
         <div className="walletIcon">
           <AiOutlineWallet onClick={()=>connectWallet()}/>
         </div>
-
-{/* 마이페이지 -> 지갑 연결 먼저 진행할 수 있도록 코드 구현 필요 */}
+        <div className="isConnectedContainer">
+          {walletAddress.length>0 ? `Connected :${walletAddress.substring(0,6)}...${walletAddress.substring(38)}` : "Not Connected"}
+        </div>
 
 
     </div>
+
+    
 )}
 
 export default Header;
