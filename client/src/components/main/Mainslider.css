@@ -33,14 +33,28 @@
     position: absolute;
     top: -5vh;
 }
+
+.treestar{
+    width: 16px
+    height 16px;
+    position: absolute;
+    top:   -5vh;
+}
+.treestar>img{
+    width: 20px;
+    object-fit: cover;
+}
+
 @keyframes snowfall {
     0% {
         transform: translate3d(var(--left-ini), 0, 0);
-   }
+    }
     100% {
         transform: translate3d(var(--left-end), 110vh, 0);
    }
 }
+
+
 .snowflake:nth-child(1) {
     --size: 1vw;
     --left-ini: -8vw;
@@ -441,6 +455,369 @@
     animation: snowfall 12s linear infinite;
     animation-delay: -3s;
 }
+
+
+
+.treestar:nth-child(51){
+    --left-ini: 8vw;
+    --left-end: 16vw;
+    left: 44vw;
+    animation: snowfall 9s linear infinite;
+    animation-delay: -3s;
+}
+
+.treestar:nth-child(52){
+    --left-ini: -4vw;
+    --left-end: 6vw;
+    left: 78vw;
+    animation: snowfall 8s linear infinite;
+    animation-delay: -8s;
+}
+.treestar:nth-child(53){
+    --left-ini: 1vw;
+    --left-end: 10vw;
+    left: 66vw;
+    animation: snowfall 20s linear infinite;
+    animation-delay: -10s;
+}
+.treestar:nth-child(54){
+    --left-ini: -23vw;
+    --left-end: -8vw;
+    left: 3vw;
+    animation: snowfall 7s linear infinite;
+    animation-delay: -1s;
+}
+.treestar:nth-child(55){
+    --left-ini: -3vw;
+    --left-end: 19vw;
+    left: 22vw;
+    animation: snowfall 15s linear infinite;
+    animation-delay: -3s;
+}
+.treestar:nth-child(56){
+    --left-ini: 7vw;
+    --left-end: 9vw;
+    left: 90vw;
+    animation: snowfall 12s linear infinite;
+    animation-delay: -6s;
+}
+.treestar:nth-child(57){
+    --left-ini: -10vw;
+    --left-end: -9vw;
+    left: 60vw;
+    animation: snowfall 14s linear infinite;
+    animation-delay: -3s;
+}
+.treestar:nth-child(58){
+    --left-ini: 90vw;
+    --left-end: 99vw;
+    left: 98vw;
+    animation: snowfall 13s linear infinite;
+    animation-delay: -13s;
+}
+.treestar:nth-child(59){
+    --left-ini: 2vw;
+    --left-end: 1vw;
+    left: 0vw;
+    animation: snowfall 12s linear infinite;
+    animation-delay: -5s;
+}
+.treestar:nth-child(60){
+    --left-ini: 2vw;
+    --left-end: -10vw;
+    left: 2vw;
+    animation: snowfall 9s linear infinite;
+    animation-delay: -3s;
+}
+
+.treestar:nth-child(61){
+    --left-ini: 7vw;
+    --left-end: -8vw;
+    left: 69vw;
+    animation: snowfall 7s linear infinite;
+    animation-delay: -3s;
+}
+
+.treestar:nth-child(62){
+    --left-ini: -4vw;
+    --left-end: 6vw;
+    left: 78vw;
+    animation: snowfall 8s linear infinite;
+    animation-delay: -8s;
+}
+.treestar:nth-child(63){
+    --left-ini: 8vw;
+    --left-end: -2vw;
+    left: 66vw;
+    animation: snowfall 6s linear infinite;
+    animation-delay: -10s;
+}
+.treestar:nth-child(64){
+    --left-ini: -23vw;
+    --left-end: -8vw;
+    left: -3vw;
+    animation: snowfall 7s linear infinite;
+    animation-delay: -1s;
+}
+.treestar:nth-child(65){
+    --left-ini: 3vw;
+    --left-end: -19vw;
+    left: 22vw;
+    animation: snowfall 8s linear infinite;
+    animation-delay: -3s;
+}
+.treestar:nth-child(66){
+    --left-ini: 7vw;
+    --left-end: 9vw;
+    left: 90vw;
+    animation: snowfall 12s linear infinite;
+    animation-delay: -6s;
+}
+.treestar:nth-child(67){
+    --left-ini: -10vw;
+    --left-end: -9vw;
+    left: 60vw;
+    animation: snowfall 14s linear infinite;
+    animation-delay: -3s;
+}
+.treestar:nth-child(68){
+    --left-ini: 90vw;
+    --left-end: 99vw;
+    left: 11vw;
+    animation: snowfall 13s linear infinite;
+    animation-delay: -13s;
+}
+.treestar:nth-child(69){
+    --left-ini: 80vw;
+    --left-end: -80vw;
+    left: 80vw;
+    animation: snowfall 12s linear infinite;
+    animation-delay: -5s;
+}
+.treestar:nth-child(70){
+    --left-ini: 2vw;
+    --left-end: -10vw;
+    left: 2vw;
+    animation: snowfall 8s linear infinite;
+    animation-delay: -3s;
+}
+
+.treestar:nth-child(71){
+    --left-ini: 7vw;
+    --left-end: -8vw;
+    left: 69vw;
+    animation: snowfall 7s linear infinite;
+    animation-delay: -3s;
+}
+
+.treestar:nth-child(72){
+    --left-ini: -4vw;
+    --left-end: 6vw;
+    left: 78vw;
+    animation: snowfall 8s linear infinite;
+    animation-delay: -8s;
+}
+.treestar:nth-child(73){
+    --left-ini: 8vw;
+    --left-end: -2vw;
+    left: 66vw;
+    animation: snowfall 6s linear infinite;
+    animation-delay: -10s;
+}
+.treestar:nth-child(74){
+    --left-ini: -23vw;
+    --left-end: -8vw;
+    left: -3vw;
+    animation: snowfall 7s linear infinite;
+    animation-delay: -1s;
+}
+.treestar:nth-child(75){
+    --left-ini: 3vw;
+    --left-end: -19vw;
+    left: 22vw;
+    animation: snowfall 8s linear infinite;
+    animation-delay: -3s;
+}
+.treestar:nth-child(76){
+    --left-ini: 7vw;
+    --left-end: 9vw;
+    left: 90vw;
+    animation: snowfall 12s linear infinite;
+    animation-delay: -6s;
+}
+.treestar:nth-child(77){
+    --left-ini: -10vw;
+    --left-end: -9vw;
+    left: 60vw;
+    animation: snowfall 14s linear infinite;
+    animation-delay: -3s;
+}
+.treestar:nth-child(78){
+    --left-ini: 90vw;
+    --left-end: 99vw;
+    left: 11vw;
+    animation: snowfall 13s linear infinite;
+    animation-delay: -13s;
+}
+.treestar:nth-child(79){
+    --left-ini: 80vw;
+    --left-end: -80vw;
+    left: 80vw;
+    animation: snowfall 12s linear infinite;
+    animation-delay: -5s;
+}
+.treestar:nth-child(80){
+    --left-ini: 2vw;
+    --left-end: -10vw;
+    left: 2vw;
+    animation: snowfall 18s linear infinite;
+    animation-delay: -3s;
+}
+
+.treestar:nth-child(81){
+    --left-ini: 7vw;
+    --left-end: -8vw;
+    left: 69vw;
+    animation: snowfall 10s linear infinite;
+    animation-delay: -3s;
+}
+
+.treestar:nth-child(82){
+    --left-ini: 14vw;
+    --left-end: 25vw;
+    left: 78vw;
+    animation: snowfall 14s linear infinite;
+    animation-delay: -8s;
+}
+.treestar:nth-child(83){
+    --left-ini: 10vw;
+    --left-end: 5vw;
+    left: 16vw;
+    animation: snowfall 11s linear infinite;
+    animation-delay: -10s;
+}
+.treestar:nth-child(84){
+    --left-ini: -23vw;
+    --left-end: -17vw;
+    left: 23vw;
+    animation: snowfall 18s linear infinite;
+    animation-delay: -1s;
+}
+.treestar:nth-child(85){
+    --left-ini: 3vw;
+    --left-end: -19vw;
+    left: 2vw;
+    animation: snowfall 13s linear infinite;
+    animation-delay: -3s;
+}
+.treestar:nth-child(86){
+    --left-ini: 9vw;
+    --left-end: 22vw;
+    left: 54vw;
+    animation: snowfall 15s linear infinite;
+    animation-delay: -6s;
+}
+.treestar:nth-child(87){
+    --left-ini: -10vw;
+    --left-end: -9vw;
+    left: 60vw;
+    animation: snowfall 14s linear infinite;
+    animation-delay: -3s;
+}
+.treestar:nth-child(88){
+    --left-ini: 90vw;
+    --left-end: 99vw;
+    left: 11vw;
+    animation: snowfall 13s linear infinite;
+    animation-delay: -13s;
+}
+.treestar:nth-child(89){
+    --left-ini: 8vw;
+    --left-end: 10vw;
+    left: 80vw;
+    animation: snowfall 12s linear infinite;
+    animation-delay: -5s;
+}
+.treestar:nth-child(90){
+    --left-ini: 14vw;
+    --left-end: 3vw;
+    left: 17vw;
+    animation: snowfall 8s linear infinite;
+    animation-delay: -3s;
+}
+
+.treestar:nth-child(91){
+    --left-ini: -7vw;
+    --left-end: 8vw;
+    left: 69vw;
+    animation: snowfall 7s linear infinite;
+    animation-delay: -4s;
+}
+
+.treestar:nth-child(92){
+    --left-ini: -4vw;
+    --left-end: 6vw;
+    left: 78vw;
+    animation: snowfall 8s linear infinite;
+    animation-delay: -3s;
+}
+.treestar:nth-child(93){
+    --left-ini: 8vw;
+    --left-end: -2vw;
+    left: 66vw;
+    animation: snowfall 6s linear infinite;
+    animation-delay: -8s;
+}
+.treestar:nth-child(94){
+    --left-ini: -23vw;
+    --left-end: -8vw;
+    left: -3vw;
+    animation: snowfall 7s linear infinite;
+    animation-delay: -10s;
+}
+.treestar:nth-child(95){
+    --left-ini: -19vw;
+    --left-end: 0vw;
+    left: 22vw;
+    animation: snowfall 11s linear infinite;
+    animation-delay: -3s;
+}
+.treestar:nth-child(96){
+    --left-ini: 7vw;
+    --left-end: 9vw;
+    left: 38vw;
+    animation: snowfall 12s linear infinite;
+    animation-delay: -6s;
+}
+.treestar:nth-child(97){
+    --left-ini: -10vw;
+    --left-end: -9vw;
+    left: 60vw;
+    animation: snowfall 14s linear infinite;
+    animation-delay: -3s;
+}
+.treestar:nth-child(98){
+    --left-ini: 90vw;
+    --left-end: 99vw;
+    left: 11vw;
+    animation: snowfall 13s linear infinite;
+    animation-delay: -5s;
+}
+.treestar:nth-child(99){
+    --left-ini: 80vw;
+    --left-end: 89vw;
+    left: 80vw;
+    animation: snowfall 12s linear infinite;
+    animation-delay: -4s;
+}
+.treestar:nth-child(100){
+    --left-ini: 2vw;
+    --left-end: -10vw;
+    left: 2vw;
+    animation: snowfall 8s linear infinite;
+    animation-delay: -1s;
+}
+
 
 /* added small blur every 6 snowflakes*/
 .snowflake:nth-child(6n) {
