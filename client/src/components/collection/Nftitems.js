@@ -35,11 +35,11 @@ const Nftitems = () => {
             {
 
             }
-            <Link to={`../NFT_transaction`} state={{tokenId:28}}><Nftcard></Nftcard></Link>
-            <Link to={`../NFT_transaction`} state={{tokenId:29}}><Nftcard></Nftcard></Link>
-            <Link to={`../NFT_transaction`} state={{tokenId:30}}><Nftcard></Nftcard></Link>
-            <Link to={`../NFT_transaction`} state={{tokenId:25}}><Nftcard></Nftcard></Link>
-            <Link to={`../NFT_transaction`} state={{tokenId:27}}><Nftcard></Nftcard></Link>
+            <Link to={`../NFT_transaction`} state={{tokenId:1}}><Nftcard></Nftcard></Link>
+            <Link to={`../NFT_transaction`} state={{tokenId:2}}><Nftcard></Nftcard></Link>
+            <Link to={`../NFT_transaction`} state={{tokenId:3}}><Nftcard></Nftcard></Link>
+            <Link to={`../NFT_transaction`} state={{tokenId:4}}><Nftcard></Nftcard></Link>
+            <Link to={`../NFT_transaction`} state={{tokenId:5}}><Nftcard></Nftcard></Link>
             <Link to='#'><Nftcard></Nftcard></Link>
             <Link to='#'><Nftcard></Nftcard></Link>
             <Link to='#'><Nftcard></Nftcard></Link>

@@ -36,10 +36,17 @@ const NFT_Transaction = () => {
         });
     });
 
-    const handleClickBuy = ()=>{
+    const handleClickBuy = async()=>{
         if((name == null || imgFile == null)) { console.log('null'); return false; }
+        const ContractWithSigner = await provider.send("eth_requestAccounts", []).then( _=>provider.getSigner()).then(signer=>makingContract.connect(signer));
+        
+        makingContract.ownerOf(tokenId).then((e)=>{
+            ContractWithSigner.functions.transferFrom(e,ethereum.selectedAddress,tokenId);
+        })
         
     }
+
+    console.log(tokenId);
 
     // console.log(makingContract.owner());
     
@@ -49,29 +56,24 @@ const NFT_Transaction = () => {
     // makingContract.balanceOf();
 
     return (
-        <Grid>
+        <div>
             <h1>NFT 구매하기 </h1>
-            <Grid container spacing={1} >
-                <Grid item xs={6}>
-                    <div >
-                        {
-                            imgFile ? imgFile && <img src={imgFile} alt="preview-img" /> :
-                            <Box  component="span" sx={{p:3 , border: '1px dashed grey' }}>
-                                img
-                            </Box>
-                        }    
-                    </div>
-                </Grid>
-                
-                <Grid item xs={6}>
-                    <p> 제목 : {name} </p>
-                    <p> 설명 : {description} </p>
-                    <p> 가격 : {price} eth</p>
+            
+            <div >
+                {
+                    imgFile ? imgFile && <img src={imgFile} alt="preview-img" /> :
+                    <Box  component="span" sx={{p:3 , border: '1px dashed grey' }}>
+                        img
+                    </Box>
+                }    
+            </div>
+            
+            <p> 제목 : {name} </p>
+            <p> 설명 : {description} </p>
+            <p> 가격 : {price} eth</p>
 
-                    <Button variant="contained" onClick={handleClickBuy}>구매하기</Button>
-                </Grid>
-            </Grid>
-        </Grid>
+            <Button variant="contained" onClick={handleClickBuy}>구매하기</Button>
+        </div>
     )
 }
 
