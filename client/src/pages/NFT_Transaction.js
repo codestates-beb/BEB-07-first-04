@@ -16,9 +16,7 @@ const NFT_Transaction = () => {
     const [description,setDescription] = React.useState('설명');
     const [price,setPrice] = React.useState(0);
 
-    const handleClickBuy = ()=>{
-        if((name == null || imgFile == null)) { console.log('null'); return false; }
-    }
+    
     const location = useLocation();
     const tokenId = location.state.tokenId;
     const ethereum = window.ethereum;
@@ -38,13 +36,18 @@ const NFT_Transaction = () => {
         });
     });
 
+    const handleClickBuy = ()=>{
+        if((name == null || imgFile == null)) { console.log('null'); return false; }
+        
+    }
+
     
 
     return (
         <Grid>
             <h1>NFT 구매하기 </h1>
             <Grid container spacing={1} >
-                <Grid item xs={4}>
+                <Grid item xs={6}>
                     <div >
                         {
                             imgFile ? imgFile && <img src={imgFile} alt="preview-img" /> :
@@ -56,9 +59,9 @@ const NFT_Transaction = () => {
                 </Grid>
                 
                 <Grid item xs={6}>
-                    <p> {name} </p>
-                    <p> {description} </p>
-                    <p> {price} eth</p>
+                    <p> 제목 : {name} </p>
+                    <p> 설명 : {description} </p>
+                    <p> 가격 : {price} eth</p>
 
                     <Button variant="contained" onClick={handleClickBuy}>구매하기</Button>
                 </Grid>
