@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import BackgroundImg from '../components/MyPage/backgroundimg';
 import ProfileImg from '../components/MyPage/profileImg';
 import Item from '../components/MyPage/item';
@@ -12,40 +12,50 @@ import './MyPage.css';
 
 const Mypage = () => {
   const [walletAddress, setWalletAddress] = useState('');
-  const getAddress = async () => {
+  const [userInfo, setUserInfo] = useState();
+  const [items, setItems] = useState([]);
+
+  const apiUrl = 'http://localhost:8080/api/user/get';
+  const getItemApiUrl = 'http://localhost:8080/api/items/getbyowneraddr';
+  const getInfo = async () => {
     const accounts = await window.ethereum.request({
       method: 'eth_requestAccounts',
     });
     setWalletAddress(accounts[0]);
-  };
-  getAddress();
-
-  const [userInfo, setUserInfo] = useState();
-  const username = 'Unnamed';
-  const getUserInfo = async () => {
-    const apiGetRes = await axios.put('http://localhost:8080/api/user/get', {
-      data: { walletAddress },
+    const apiRes = await axios.put(apiUrl, { walletAddress: accounts[0] });
+    setUserInfo(apiRes.data);
+    const getItemsRes = await axios.put(getItemApiUrl, {
+      walletAddress: accounts[0],
     });
-    console.log(apiGetRes);
+    setItems(getItemsRes.data.content);
   };
-  getUserInfo();
 
-  const backgroundImgUrl =
-    'https://cdn.discordapp.com/attachments/1056736677932048424/1056736700921032734/image.png';
-  const profileImg =
-    'https://cdn.discordapp.com/attachments/1056736677932048424/1056738030439899176/image.png';
-  const items = [
-    {
-      img: 'https://i.seadn.io/gae/9W1YRF-lCsRkgx0Dzdq-QW2wuKd_fTniehvW6mJRXFAhb7_4GivT7fzf2D60x6P0Dxtha93o1mE8xi0C-h5etGfvaq4VPxaALAR1cKM?auto=format&w=750',
-      name: 'FirstNFT',
-      collection: 'Minchobing',
-    },
-    {
-      img: 'https://i.seadn.io/gae/9W1YRF-lCsRkgx0Dzdq-QW2wuKd_fTniehvW6mJRXFAhb7_4GivT7fzf2D60x6P0Dxtha93o1mE8xi0C-h5etGfvaq4VPxaALAR1cKM?auto=format&w=750',
-      name: 'SecondNFT',
-      collection: 'HeHe',
-    },
-  ];
+  useEffect(() => {
+    getInfo();
+  }, []);
+
+  let username = '';
+  let backgroundImgUrl = '';
+  let profileImg = '';
+  if (userInfo) {
+    username = userInfo.content.username;
+    backgroundImgUrl = userInfo.content.backgroundPicUrl;
+    profileImg = userInfo.content.profilePicUrl;
+  }
+
+  // const items = [
+  //   {
+  //     img: 'https://i.seadn.io/gae/9W1YRF-lCsRkgx0Dzdq-QW2wuKd_fTniehvW6mJRXFAhb7_4GivT7fzf2D60x6P0Dxtha93o1mE8xi0C-h5etGfvaq4VPxaALAR1cKM?auto=format&w=750',
+  //     name: 'FirstNFT',
+  //     collection: 'Minchobing',
+  //   },
+  //   {
+  //     img: 'https://i.seadn.io/gae/9W1YRF-lCsRkgx0Dzdq-QW2wuKd_fTniehvW6mJRXFAhb7_4GivT7fzf2D60x6P0Dxtha93o1mE8xi0C-h5etGfvaq4VPxaALAR1cKM?auto=format&w=750',
+  //     name: 'SecondNFT',
+  //     collection: 'HeHe',
+  //   },
+  // ];
+
   return (
     <div id="mypage">
       <div id="backgroundimg">
@@ -59,14 +69,17 @@ const Mypage = () => {
         <MenuBar />
       </div>
       <div id="items">
-        {items.map((e) => (
-          <Item
-            className={`item${items.indexOf(e)}`}
-            img={e.img}
-            name={e.name}
-            collection={e.collection}
-          />
-        ))}
+        {items === 'No items' ? (
+          <div>No Items</div>
+        ) : (
+          items.map((e) => (
+            <Item
+              className={`item${items.indexOf(e)}`}
+              metadata={e.metaData}
+              contractAddress={e.collectionAddress}
+            />
+          ))
+        )}
       </div>
     </div>
   );
