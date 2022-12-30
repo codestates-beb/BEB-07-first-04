@@ -1,10 +1,14 @@
 .headerMain *{
+    overflow-x:hidden;
     margin :0;
     padding:0;
     text-decoration :none;
 }
 .headerMain {
+   position: sticky;
+   top:0px;
     background-color: #04111d;
+    z-index: 10;
     width: 99vw;
     padding-left: 1.2rem;
     padding-right: 1.2rem;
