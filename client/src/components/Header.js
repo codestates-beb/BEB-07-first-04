@@ -31,10 +31,14 @@ function Header () {
       method: "eth_accounts",
     });
     if(!accounts[0]) {
-      document.location.href = "/"
       alert('Please Connect Wallet')
-    } 
+      document.location.href = "/"
+      
+    } else {
+      document.location.href = "/mypage"
+    }
   } 
+
 
   const connectWallet = async () => {
     try {
