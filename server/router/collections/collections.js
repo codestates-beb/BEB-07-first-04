@@ -13,6 +13,7 @@ const {
 
 router.put('/databyname', async (req, res) => {
   const body = req.body;
+  console.log(body);
   if (
     typeof body.collectionName === 'undefined' ||
     Object.keys(body).length !== 1
@@ -30,6 +31,8 @@ router.put('/databyname', async (req, res) => {
 
 router.put('/info', async (req, res) => {
   const body = req.body;
+  console.log(req.headers);
+
   if (
     typeof body.contractAddress === 'undefined' ||
     Object.keys(body).length !== 1
@@ -46,6 +49,8 @@ router.put('/info', async (req, res) => {
 
 router.put('/data', async (req, res) => {
   const body = req.body;
+  console.log(body);
+
   if (
     typeof body.contractAddress === 'undefined' ||
     Object.keys(body).length !== 1

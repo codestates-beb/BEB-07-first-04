@@ -18,11 +18,13 @@
     background-color: white;
     width: 180px;
 
+    overflow: hidden;
     border-radius: 10px;
 }
 
 .collection-profile-img > img{
-    width: 100%;
+    width: 180px;
+    height: 180px;
 }
 .collection-content-description{
     padding: 32px;

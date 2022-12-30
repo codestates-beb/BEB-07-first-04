@@ -12,9 +12,18 @@ import './Nftitems.css'
 import useInterval from './useInterval';
 
 
-const Nftitems = () => {
+const Nftitems = ({imgUrl}) => {
+    const fakeFetch = (delay = 2000) => new Promise(res => setTimeout(res, delay));
+
     const [count,setCount] = useState(0);
     const [tokenMax,setTokenMax] = useState(0);
+    const [fakeState,setFakeState] = useState(1);
+
+    const fetchItems = async () =>{
+        setFakeState(0)
+        await fakeFetch();
+        setFakeState(1);
+    }
 
     useInterval(() => {
         setCount(count + 1);
@@ -28,24 +37,26 @@ const Nftitems = () => {
     return (
     <div className='collection-nft'>
         <div className='collection-nft-reload'>
-            <div className='collection-nft-reload-img' onClick={()=>{setCount(0)}}><img alt='reload' src={reload_logo}></img></div>
+            <div className='collection-nft-reload-img' 
+                onClick={()=>{
+                    fetchItems();
+                    setCount(0)
+                }
+                }><img alt='reload' src={reload_logo}></img></div>
             <div className='collection-nft-reload-time'>Updated {count>=60?`${Math.floor(count/60)}m`:`${count}s`} ago</div>
         </div>
         <div className='collection-nft-items'>
             {
-
+                fakeState
+                ?[...Array(15)].map((_,i)=>{
+                    return <Link to={`../NFT_transaction`} state={{tokenId:i+1}}><Nftcard imgUrl={imgUrl}></Nftcard></Link>
+                })
+                :<div class="loading-container">
+                    <div class="loading"></div>
+                    <div id="loading-text">OPEN C</div>
+                </div>
             }
-            <Link to={`../NFT_transaction`} state={{tokenId:1}}><Nftcard></Nftcard></Link>
-            <Link to={`../NFT_transaction`} state={{tokenId:2}}><Nftcard></Nftcard></Link>
-            <Link to={`../NFT_transaction`} state={{tokenId:3}}><Nftcard></Nftcard></Link>
-            <Link to={`../NFT_transaction`} state={{tokenId:4}}><Nftcard></Nftcard></Link>
-            <Link to={`../NFT_transaction`} state={{tokenId:5}}><Nftcard></Nftcard></Link>
-            <Link to='#'><Nftcard></Nftcard></Link>
-            <Link to='#'><Nftcard></Nftcard></Link>
-            <Link to='#'><Nftcard></Nftcard></Link>
-            <Link to='#'><Nftcard></Nftcard></Link>
-            <Link to='#'><Nftcard></Nftcard></Link>
-            <Link to='#'><Nftcard></Nftcard></Link>
+
 
         </div>
     </div>
