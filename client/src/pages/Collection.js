@@ -7,7 +7,7 @@ import './Collection.css'
 const Collection = () => {
     const {collectionTitle} = useParams();
     const collectionData = dummyData.filter(e=>e.collectionName.replace(/ /gi,'-')===collectionTitle).at(0);
-    console.log(collectionData)
+    
     //collectionTitle을 활용해 데이터 받아오기
     //bgImgUrl, imgUrl, numOfItes, chainTitle, createdAt, NFTs{ nftImgUrl, id, price,}
 
