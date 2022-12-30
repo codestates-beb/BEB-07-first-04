@@ -10,8 +10,8 @@ const Slider = ({children}) => {
 
     const handleButtonClick = (direction) => {
         let newIndex = currentIndex + direction;
-        if(newIndex>=4) newIndex =0;
-        if(newIndex<0) newIndex =3;
+        if(newIndex>=3) newIndex =0;
+        if(newIndex<0) newIndex =2;
         
         setCurrentIndex(newIndex);
     }

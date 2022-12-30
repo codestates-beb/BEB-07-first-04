@@ -11,10 +11,10 @@ const Rank = ({i,imgUrl,collectionTitle,floorPrice,marketCap}) => {
                 {i}
             </div>
             <div className="main-ranker-rank-img">
-                <img src="https://i.seadn.io/gcs/files/d2051befa1918d9e99191ff2a12ffc69.gif?auto=format&w=384"></img>
+                <img src={imgUrl}></img>
             </div>
             <div className="main-ranker-rank-title">
-                <h5>ETH GOBBLERS</h5>
+                <h5>{collectionTitle}</h5>
                 <p>floor: 0.37ETH</p>
             </div>
         </div>

@@ -30,17 +30,19 @@ class item {
     this.metaData = metaData;
   }
 }
+const a= new item('0x0001', '0x1001', 1, 'metamong');
+console.log(a.tokenId );
 
 const addDummy = async () => {
   const userDummy = [
-    new user('0x0001', 'fUser'),
-    new user('0x0002', 'sUser'),
-    new user('0x0003', 'tUser'),
+    new user('0x00011', 'fUser'),
+    new user('0x00022', 'sUser'),
+    new user('0x00033', 'tUser'),
   ];
   const collectionDummy = [
-    new collection('0x1001', 'fCollection'),
-    new collection('0x1002', 'sCollection'),
-    new collection('0x1003', 'tCollection'),
+    new collection('0x10011', 'fCollection'),
+    new collection('0x10022', 'sCollection'),
+    new collection('0x10033', 'tCollection'),
   ];
   const itemsDummy = [
     new item('0x0001', '0x1001', 1, 'metamong'),

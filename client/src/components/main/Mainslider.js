@@ -7,10 +7,11 @@ import star from '../../assets/chirstmas/star.png'
 import ball from '../../assets/chirstmas/ball.png'
 import gift from '../../assets/chirstmas/gift.png'
 import axios from 'axios';
+import dummyData from '../dummyData.js'
 
 const SERVER_URL = 'http://localhost:8080/api/collection/data';
 const Mainslider =  () => {
-    const contractAddress = '0x13313';
+    const contractAddress = '0x1001';
     const getCollection = async () =>{
         const response = await axios.put(SERVER_URL,{
             contractAddress:contractAddress}
@@ -19,6 +20,7 @@ const Mainslider =  () => {
     }
 
     useEffect(()=>{
+        console.log('effect');
         getCollection();
     },[]);
     
@@ -60,21 +62,15 @@ const Mainslider =  () => {
                 <h1>Explore, collect and sell NFTs</h1>
             </div>
             <Slider>
-                <Link to='#'><Swiper></Swiper></Link>   
-                <Link to='#'><Swiper></Swiper></Link>   
-                <Link to='#'><Swiper></Swiper></Link>   
-                <Link to='#'><Swiper></Swiper></Link>   
-                <Link to='#'><Swiper></Swiper></Link>   
-                <Link to='#'><Swiper></Swiper></Link>   
-                <Link to='#'><Swiper></Swiper></Link>   
-                <Link to='#'><Swiper></Swiper></Link>   
-                <Link to='#'><Swiper></Swiper></Link>   
-                <Link to='#'><Swiper></Swiper></Link>   
-                <Link to='#'><Swiper></Swiper></Link>   
-                <Link to='#'><Swiper></Swiper></Link>   
-                <Link to='#'><Swiper></Swiper></Link>   
-                <Link to='#'><Swiper></Swiper></Link>   
-                <Link to='#'><Swiper></Swiper></Link>   
+                {
+                    
+                    dummyData.map(e=>{
+                        if(e.category==='main')
+                        return <Link to={'/collection/'+ e.collectionName.replace(/ /gi,'-')}>
+                            <Swiper imgUrl={e.collectionImgUrl} collectionTitle={e.collectionName}></Swiper>
+                        </Link>
+                    })
+                }
             </Slider>
         </div>
     );

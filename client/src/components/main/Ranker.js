@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import dummyData from "../dummyData";
 import Navtap from "../Navtap";
 import Rank from "./Rank";
 import './Ranker.css'
 
 const Ranker = () => {
     const [category,setCategory] = useState(0);
-
-
+    const categoryWord = ['Trending','Top'];
+    const nftData = dummyData.filter(e=>e.category===categoryWord[category]);
+    console.log(nftData)
     // 필요 data fetch 
     // useEffect(()=>{
     //     fetch
@@ -23,8 +25,8 @@ const Ranker = () => {
                     // data.map((e,i)=>{
                     //  return <Link to='/collection/e.collectionTitle'> <Rank i={i+1}></Rank></Link>;
                     //})
-                    [1,2,3,4,5].map((e)=>{
-                        return <Link to='#'> <Rank i={e}></Rank></Link>;
+                    nftData.map((e,i)=>{
+                        if(i<5) return <Link to={'/collection/' + e.collectionName.replace(/ /gi,'-')}> <Rank i={i+1} imgUrl={e.collectionImgUrl} collectionTitle={e.collectionName}></Rank></Link>;
                     })
                 }
             </div>
@@ -35,8 +37,8 @@ const Ranker = () => {
                     // data.map((e,i)=>{
                     //  return <Link to='/collection/e.collectionTitle'> <Rank i={i+1}></Rank></Link>;
                     //})
-                    [6,7,8,9,10].map((e)=>{
-                        return <Link to='#'> <Rank i={e}></Rank></Link>;
+                    nftData.map((e,i)=>{
+                        if(i>=5) return <Link to={'/collection/' + e.collectionName.replace(/ /gi,'-')}> <Rank i={i+1} imgUrl={e.collectionImgUrl} collectionTitle={e.collectionName}></Rank></Link>;
                     })
                 }
             </div>

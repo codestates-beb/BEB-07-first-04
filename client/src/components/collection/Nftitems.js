@@ -12,7 +12,7 @@ import './Nftitems.css'
 import useInterval from './useInterval';
 
 
-const Nftitems = () => {
+const Nftitems = ({imgUrl}) => {
     const [count,setCount] = useState(0);
     const [tokenMax,setTokenMax] = useState(0);
 
@@ -35,17 +35,21 @@ const Nftitems = () => {
             {
 
             }
-            <Link to={`../NFT_transaction`} state={{tokenId:1}}><Nftcard></Nftcard></Link>
-            <Link to={`../NFT_transaction`} state={{tokenId:2}}><Nftcard></Nftcard></Link>
-            <Link to={`../NFT_transaction`} state={{tokenId:3}}><Nftcard></Nftcard></Link>
-            <Link to={`../NFT_transaction`} state={{tokenId:4}}><Nftcard></Nftcard></Link>
-            <Link to={`../NFT_transaction`} state={{tokenId:5}}><Nftcard></Nftcard></Link>
-            <Link to='#'><Nftcard></Nftcard></Link>
-            <Link to='#'><Nftcard></Nftcard></Link>
-            <Link to='#'><Nftcard></Nftcard></Link>
-            <Link to='#'><Nftcard></Nftcard></Link>
-            <Link to='#'><Nftcard></Nftcard></Link>
-            <Link to='#'><Nftcard></Nftcard></Link>
+            <Link to={`../NFT_transaction`} state={{tokenId:1}}><Nftcard imgUrl={imgUrl}></Nftcard></Link>
+            <Link to={`../NFT_transaction`} state={{tokenId:2}}><Nftcard imgUrl={imgUrl}></Nftcard></Link>
+            <Link to={`../NFT_transaction`} state={{tokenId:3}}><Nftcard imgUrl={imgUrl}></Nftcard></Link>
+            <Link to={`../NFT_transaction`} state={{tokenId:4}}><Nftcard imgUrl={imgUrl}></Nftcard></Link>
+            <Link to={`../NFT_transaction`} state={{tokenId:5}}><Nftcard imgUrl={imgUrl}></Nftcard></Link>
+            <Link to='#'><Nftcard imgUrl={imgUrl}></Nftcard></Link>
+            <Link to='#'><Nftcard imgUrl={imgUrl}></Nftcard></Link>
+            <Link to='#'><Nftcard imgUrl={imgUrl}></Nftcard></Link>
+            <Link to='#'><Nftcard imgUrl={imgUrl}></Nftcard></Link>
+            <Link to='#'><Nftcard imgUrl={imgUrl}></Nftcard></Link>
+            <Link to='#'><Nftcard imgUrl={imgUrl}></Nftcard></Link>
+            <Link to='#'><Nftcard imgUrl={imgUrl}></Nftcard></Link>
+            <Link to='#'><Nftcard imgUrl={imgUrl}></Nftcard></Link>
+            <Link to='#'><Nftcard imgUrl={imgUrl}></Nftcard></Link>
+            <Link to='#'><Nftcard imgUrl={imgUrl}></Nftcard></Link>
 
         </div>
     </div>
