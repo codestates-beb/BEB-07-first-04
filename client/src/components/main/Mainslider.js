@@ -64,8 +64,7 @@ const Mainslider =  () => {
             <Slider>
                 {
                     
-                    dummyData.map(e=>{
-                        if(e.category==='main')
+                    dummyData.filter(e=>e.category==='main').map(e=>{
                         return <Link to={'/collection/'+ e.collectionName.replace(/ /gi,'-')}>
                             <Swiper imgUrl={e.collectionImgUrl} collectionTitle={e.collectionName}></Swiper>
                         </Link>

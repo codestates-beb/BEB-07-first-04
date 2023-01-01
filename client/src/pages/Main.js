@@ -18,7 +18,7 @@ const Main = () => {
         <Slider>
             {
                 nftData1.map((e)=>{
-                    return <Link to={'/collection' + e.collectionName.replace(/ /gi,'-')}><Nftsmallcard imgUrl={e.collectionImgUrl} title={e.collectionName}></Nftsmallcard></Link>
+                    return <Link to={'/collection/' + e.collectionName.replace(/ /gi,'-')}><Nftsmallcard imgUrl={e.collectionImgUrl} title={e.collectionName}></Nftsmallcard></Link>
                 })
             }
         </Slider>
@@ -26,7 +26,7 @@ const Main = () => {
         <Slider>
             {
                 nftData2.map((e)=>{
-                    return <Link to={'/collection' + e.collectionName.replace(/ /gi,'-')}><Nftsmallcard imgUrl={e.collectionImgUrl} title={e.collectionName}></Nftsmallcard></Link>
+                    return <Link to={'/collection/' + e.collectionName.replace(/ /gi,'-')}><Nftsmallcard imgUrl={e.collectionImgUrl} title={e.collectionName}></Nftsmallcard></Link>
                 })
             }
         </Slider>

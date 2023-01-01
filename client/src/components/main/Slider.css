@@ -23,8 +23,7 @@
     width: max-content;
     display: flex;
     flex-wrap: wrap;
-    gap: calc((100vw - 1280px - 16px)/5 );
-    gap: 30px;
+    gap: 20px;
 
     padding: 0 20px;
 
